@@ -13,6 +13,41 @@ body, h1, h2, h3, h4, h5, h6 {
 	font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* Doby Grid Resets for Foundation */
+
+.doby-grid *,
+.doby-grid *:before,
+.doby-grid *:after {
+	box-sizing: content-box;
+}
+
+.doby-grid [class*="column"] + [class*="column"]:last-child {
+	float: none
+}
+
+/* Code */
+
+
+pre:before, pre:after {
+    content: " ";
+}
+
+pre {
+	background-color: #F8F8F8;
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+	font-size: 12px;
+	line-height: 19px;
+	overflow: auto;
+	margin-bottom: 20px;
+	padding: 6px 10px;
+}
+
+code, pre {
+	color: #333;
+	font-weight: normal;
+}
+
 /* Template */
 
 body {
@@ -136,3 +171,10 @@ footer li a {
 }
 
 .disabled {opacity: 0.5}
+
+/* Grid Page */
+
+#grid-demo {
+	height: 400px;
+	padding-bottom: 20px;
+}
