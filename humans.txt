@@ -1,0 +1,10 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Evgueni Naverniouk -- <evgueni@globexdesigns.com>
+
+# TECHNOLOGY COLOPHON
+
+    HTML5

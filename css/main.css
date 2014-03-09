@@ -1,0 +1,138 @@
+/* Foundation Tweaks */
+
+.label {
+	box-shadow: rgba(0,0,0,0.5) 0 0 1px;
+	margin: 0 0.25rem;
+	padding: 0.15rem 0.35rem 0.25rem;
+	vertical-align: 2px;
+}
+
+/* Font */
+
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Template */
+
+body {
+	background: url(../img/background.png) repeat;
+	color: #666;
+	font-size: 14/1.5;
+	font-weight: 300;
+}
+
+a {
+	color: #3399CC;
+	text-decoration: none;
+	transition: color 0.2s ease-in-out;
+}
+
+a:focus,
+a:hover {color: #69CDFF}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #222;
+	font-weight: 700;
+	text-shadow: #FFF 0 1px 0;
+}
+
+h1 {font-size: 42px}
+h2 {font-size: 28px}
+h3 {font-size: 22px}
+
+.textcenter {text-align: center}
+
+header {
+	background-color: #164F67;
+	background-image: linear-gradient(to bottom, #258DB9, #1A607E);
+}
+
+.stars {
+	background-image:
+		radial-gradient(white, rgba(255,255,255,.15) 1px, rgba(255,255,255,.001) 30px),
+		radial-gradient(white, rgba(255,255,255,.1) 2px, rgba(255,255,255,.001) 40px),
+		radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, rgba(255,255,255,.001) 30px);
+	background-position: 70px 168px, 160px 210px, 90px 110px;
+	background-size: 120px 110px, 250px 250px, 150px 150px;
+	padding: 20px 0 26px;
+}
+
+header h1,
+header p {
+	color: #FFF;
+	margin: 0;
+	text-shadow: rgba(0,0,0,0.3) 2px 2px 0;
+}
+
+header p {
+	color: #EEE;
+	margin-top: -6px
+}
+
+#content {
+	margin: 40px 0 0;
+	min-height: calc(100% - 272px);
+}
+
+.page {display: none}
+
+.breadcrumbs {
+	margin: -10px 10px 10px;
+}
+
+footer {
+	background: #333;
+	padding: 30px 0 10px;
+}
+
+.globex-designs-logo {
+	background: url(../img/globex-designs.png) no-repeat;
+	display: inline-block;
+	height: 25px;
+	width: 200px;
+}
+
+footer ul {
+	display: inline-block;
+	line-height: 26px;
+	margin: 0 0 0 20px;
+	padding-bottom: 0;
+}
+
+footer li {
+	display: block;
+	float: left;
+	margin-left: 6px;
+	text-transform: uppercase;
+}
+
+footer li a {
+	color: #666;
+	font-size: 13px;
+	font-weight: 700;
+	padding: 3px 6px;
+}
+
+.copyright {
+	color: #888;
+	font-size: 12px;
+}
+
+.copyright a {color: #888}
+.copyright a:hover {color: #DDD}
+
+/* Context */
+
+.alpha {
+	background: #DDD;
+	border: 1px solid #BBB;
+	border-radius: 3px;
+	font-size: 10px;
+	font-weight: 300;
+	margin: 0 0 0 6px;
+	padding: 0 5px;
+	vertical-align: 4px;
+}
+
+.disabled {opacity: 0.5}
