@@ -162,6 +162,7 @@ $(function () {
 						removable: true
 					}],
 					data: data,
+					editable: true,
 					quickFilter: true
 				}).appendTo($target);
 			});
