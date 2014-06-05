@@ -1,0 +1,24 @@
+{
+	"globals": {
+		"alert": true,
+		"confirm": true,
+		"prompt": true,
+		"window": true,
+
+		"define": true,
+		"require": true,
+		
+		"$": true,
+		"Backbone": true
+	},
+
+	"browser": true,
+	"devel": false,
+	"indent": 4,
+	"loopfunc": false,
+	"plusplus": false,
+	"strict": true,
+	"undef": true,
+	"unused": true,
+	"white": true
+}

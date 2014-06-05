@@ -271,11 +271,15 @@
 .doby-grid-group-toggle.collapsed .icon {
   background-image: url("../../../assets/img/plus-small.png");
 }
-/*! Row Alert
+/*! Empty Overlay
 ================================================================================================== */
-.doby-grid-alert {
+.doby-grid-empty {
   color: #999;
+  font-size: 18px;
+  font-weight: 200;
+  padding: 4% 0;
   text-align: center;
+  text-shadow: 1px 1px 0 #FFF;
 }
 /*! Editing
 ================================================================================================== */
@@ -302,6 +306,9 @@
   border-color: #C83C50;
   border-color: rgba(200, 60, 80, 0.8);
   box-shadow: rgba(200, 60, 80, 0.3) 4px 4px 2px inset;
+}
+.doby-grid-invalid-icon {
+  background: url("../../../assets/img/exclamation-diamond.png") no-repeat center center;
 }
 .doby-grid-range-decorator {
   border: 2px dashed #1E7D0A;

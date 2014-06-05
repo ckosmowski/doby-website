@@ -115,6 +115,10 @@ header p {
 	text-shadow: rgba(0,0,0,0.3) 2px 2px 0;
 }
 
+	header h1 a {
+		color: #FFF;
+	}
+
 header p {
 	color: #EEE;
 	margin-top: -6px
@@ -187,9 +191,120 @@ footer li a {
 
 .disabled {opacity: 0.5}
 
+.sidebar {
+	background: rgba(0,0,0,0.05);
+	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 8px;
+	box-shadow: rgba(0,0,0,0.05) 5px 5px 15px inset;
+	padding-top: 10px
+}
+
+	.sidebar .side-nav {
+		margin-top: 0	
+	}
+
+	.sidebar .side-nav li:not(.heading) {
+		line-height: 14px;
+		margin: 0;
+	}
+
+	.sidebar .side-nav li + li.heading {
+		margin-top: 20px	
+	}
+
+		.sidebar .side-nav li a {
+			color: #999;
+			font-size: 11px;
+		}
+
+			.sidebar .side-nav li a strong {
+				color: #008cba
+			}
+
+				.sidebar .side-nav li a:hover strong {
+					color: #1cc7ff
+				}
+
 /* Grid Page */
 
-#grid-demo {
+#demo-grid {
 	height: 400px;
 	padding-bottom: 20px;
 }
+
+/* Documentation */
+
+h2 .pref,
+h2 .param {
+	color: #666;
+	font-weight: 500;
+}
+
+h2 .pref {
+	color: #1F769A;
+}
+
+blockquote {
+	border-left: 4px solid #CCC;
+    color: #777;
+    padding: 0 15px;
+}
+
+pre[class*="language-"] {
+	margin: 0;
+	padding: 0;
+}
+
+pre:before,
+pre:after {
+	content: none;
+}
+
+code.pill {
+	background: linear-gradient(to bottom, #F7F7F7, #EEE);
+	border: 1px solid #AAA;
+	border-radius: 4px;
+	color: #111;
+	font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	padding: 0 6px 2px;
+	text-shadow: #FFF 0 1px 0;
+	vertical-align: 1px;
+}
+
+code.strong {
+	background: linear-gradient(to bottom, #F7F7F7, #EEEEFF);
+	border-color: #1F769A;
+	color: #1F769A;
+	font-weight: 600
+}
+
+	a:hover code.pill {
+		background: linear-gradient(to bottom, #E7E7E7, #DDD);
+		border: 1px solid #BBB;
+		color: #000;
+	}
+
+/* Prism JS tweaks */
+
+pre[class*="language-"] {
+	background: rgba(255,255,255,0.5);
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+code[data-language] {
+	line-height: 14px;
+	padding: 12px;
+}
+
+pre[class*='language-'] > code[data-language]::before {
+	background: linear-gradient(to bottom, #EFEFEF, #DFDFDF);
+	border-top: 1px solid #FFF;
+	color: #333;
+	font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	padding: 2px 6px;
+	text-shadow: #FFF 0 1px 0;
+}
+	

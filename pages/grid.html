@@ -1,34 +1,26 @@
-<div class="page" id="page-grid">
-	<div class="row">
-		<nav class="breadcrumbs">
-			<a href="#">Home</a>
-			<a class="current" href="#grid">Grid</a>
-		</nav>
+<div class="row">
+	{{sidebar}}
 
+	<div class="large-9 medium-8 columns">
 		<div class="large-8 medium-8 columns">
 			<h2>Grid <span class="alpha">alpha</span></h2>
 			<p>Doby Grid is stand-alone module (part of the Doby JS framework) for rendering a dynamic, data-driven grid. It's basically a <span class="label radius secondary">&lt;table&gt;</span> element on steroids.</p>
 		</div>
-		
+
 		<div class="large-4 medium-4 columns textcenter">
 			<a class="button" href="https://github.com/globexdesigns/doby-grid" style="margin-top:50px">View on GitHub</a>
 		</div>
-	</div>
-	
-	<div class="row">
-		<div class="columns" id="grid-demo">
-			
+
+		<div class="columns" id="demo-grid">
 		</div>
-	</div>
-	
-	<div class="row">
+
 		<div class="columns">
 			<h3>Doby Grid isn't ready for general use yet</h3>
 
 			<p>Doby Grid is currently in alpha and not yet intended for production use. The library changes very rapidly, often with breaking changes. API methods and functions get renamed and parameters are reconfigured frequently. Documentation is only partially complete.</p>
 
 			<p>At this time we're looking for early testers who are interested in contributing to the development and testing of the library. Feel free to give it a spin and let us know what's missing.</p>
-			
+
 			<h3>Features</h3>
 
 			<ul class="columns">
@@ -54,29 +46,44 @@
 				<li>Pixel perfect, rock solid and stress tested with hundreds of <a href="https://github.com/globexdesigns/doby-grid/tree/master/tests">tests</a>
 				</li>
 			</ul>
-			
+
 			<h3>Dependencies</h3>
 
 			<ul>
-				<li>jQuery 2.0.3 <a href="http://jquery.com/">http://jquery.com/</a></li>
-				<li>Underscore 1.5.2 <a href="http://underscorejs.org/">http://underscorejs.org/</a></li>
-				<li>Backbone 1.1.0 <a href="http://backbonejs.org/">http://backbonejs.org/</a></li>
+				<li><a href="http://jquery.com/"><strong>jQuery 2.0.3</strong></a></li>
+				<li><a href="http://underscorejs.org/"><strong>Underscore 1.5.2</strong></a></li>
+				<li><a href="http://backbonejs.org/"><strong>Backbone 1.1.0</strong></a></li>
 			</ul>
 
 			<h3>Optional Dependencies</h3>
 
 			<ul>
-				<li>jQuery.ui.sortable <a href="http://jqueryui.com/">http://jqueryui.com/</a> (for column re-ordering)</li>
-				<li>jquery.event.drag <a href="http://threedubmedia.com/code/event/drag">http://threedubmedia.com/code/event/drag</a> (for column and row re-sizing and cell range selection)</li>
-				<li>FileSaver <a href="https://github.com/eligrey/FileSaver.js">https://github.com/eligrey/FileSaver.js</a> (for data export functionality)</li>
+				<li>
+					<a href="http://jqueryui.com/"><strong>jQuery.ui.sortable</strong></a>
+					<ul>
+						<li>for column re-ordering</li>
+					</ul>
+				</li>
+				<li>
+					<a href="http://threedubmedia.com/code/event/drag"><strong>jquery.event.drag</strong></a>
+					<ul>
+						<li>for column and row re-sizing and cell range selection</li>
+					</ul>
+				</li>
+				<li>
+					<a href="https://github.com/eligrey/FileSaver.js"><strong>FileSaver</strong></a>
+					<ul>
+						<li>for data export functionality</li>
+					</ul>
+				</li>
 			</ul>
 
 			<h3>Limitations</h3>
 
 			<p>If your grid is rendered inside an invisible element, or an element that is resized - you will need to manually call the resize() method to correct the rendering. Window resizing is auto-detected however.</p>
-			
+
 			<hr/>
-			
+
 			<h3>How To Use</h3>
 
 			<p>Grab the latest version from <a href="https://github.com/globexdesigns/doby-grid/releases">https://github.com/globexdesigns/doby-grid/releases</a>.</p>
@@ -86,23 +93,19 @@
 			<p>Then include it into your app either via Require JS, or by adding &lt;script&gt; and &lt;link&gt; tags to load in the Javascript and CSS files after the required dependencies.</p>
 
 			<p>Then simply call:</p>
-			
-			<pre class="prettyprint">new DobyGrid({...}).appendTo($(document.body))</pre>
-			
-			<h3>Documentation</h3>
 
-			<p>Doby Grid has a lot of configurable options. Full documentation is provided on the wiki here: <a href="https://github.com/globexdesigns/doby-grid/wiki">https://github.com/globexdesigns/doby-grid/wiki</a>.</p>
-			
+			<pre class="prettyprint">new DobyGrid({...}).appendTo($(document.body))</pre>
+
 			<h3>Change Logs</h3>
 
 			<p>Change logs for our releases can be found here: <a href="https://github.com/globexdesigns/doby-grid/releases">https://github.com/globexdesigns/doby-grid/releases</a>.</p>
-			
+
 			<h3>Submitting Bugs and Feature Requests</h3>
 
 			<p>Please use GitHub issues: <a href="https://github.com/globexdesigns/doby-grid/issues">https://github.com/globexdesigns/doby-grid/issues</a></p>
 
 			<hr/>
-			
+
 			<h3>FAQ</h3>
 
 			<h4>Why is Backbone a required module? Can't I use Angular, Knockout, or another MVC?</h4>
@@ -129,7 +132,7 @@
 				<li>comes in a single AMD-supported library, instead of various pieces that need to be compiled together</li>
 				<li>does <em>not</em> support jQuery UI Themes</li>
 			</ul>
-			
+
 			<p>Doby Grid tries to find a balance between performance and usability while offering developers ways to control which features they want to enable at a potential performance cost.</p>
 
 			<h4>So it's like BackGrid then...</h4>
@@ -156,14 +159,14 @@
 
 			<h4>Ok, well what about if I absolutely cannot draw my cell until Doby Grid has finished rendering? Maybe it's a cell that's rendered after an ajax event is fired, or has some other external conditions...</h4>
 
-			<p>If delegating events isn't enough, then you can use post-processing as demonstrated in the post-processing example. See the <a href="https://github.com/globexdesigns/doby-grid/wiki/Column-Options#wiki-doby-grid-postprocess">postprocess</a> Column Option for documentation. Keep in mind that this is going to have a very significant rendering performance hit and is not recommended on large grids.</p>
+			<p>If delegating events isn't enough, then you can use post-processing as demonstrated in the post-processing example. See the <a href="https://github.com/globexdesigns/doby-grid/wiki/Column-Options#wiki-grid-method-postprocess">postprocess</a> Column Option for documentation. Keep in mind that this is going to have a very significant rendering performance hit and is not recommended on large grids.</p>
 
 			<p>And just to be clear -- do not use this for trying to assign events to your cell. It won't work and will only make your grid slow. All those references will be wiped when the grid is re-rendered or scrolled. Don't bother.</p>
 
 			<h4>There's a bug in Internet Explorer...</h4>
 
 			<p>Doby Grid does not support Internet Explorer. Don't bother posting bug reports. If it's something that affects all browsers - definitely let us know, but if it's an issue specific to IE6 or IE7 or IE8 or even IE9 -- sorry, Doby Grid is not for you.</p>
-			
+
 		</div>
 	</div>
 </div>

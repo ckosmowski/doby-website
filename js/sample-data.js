@@ -1,6 +1,7 @@
 define([], function () {
-	return [
-    {
+	"use strict";
+	
+	return [{
         "id": 0,
         "data": {
             "id": 0,
@@ -8189,6 +8190,5 @@ define([], function () {
             ],
             "customField": "Hello, Montoya Forbes! You have 1 unread messages."
         }
-    }
-]
+    }];
 });

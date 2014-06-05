@@ -1,0 +1,140 @@
+<div class="row">
+	{{sidebar}}
+
+	<div class="large-9 medium-8 columns">
+		<div class="columns">
+			<h2><span class="pref">grid.</span>filter()</h2>
+			<p>Filter the grid data. The filter method accepts two different input types:</p>
+
+			<p><code class="pill">A function</code>: You can specify a single function which will be used for filtering all the data at once. The function takes a single parameter (the row's data object) and expects to return either a true (if the item passes the filter) or false (if the item doesn't pass the filter).</p>
+
+			<p><code class="pill">An array</code>: You can specify an object for various filter functions for each given column. The object's keys must be column id's and the values will be a "filter set" array. If using a "filter set", the filter will also be sent to the remote server if using a Remote Data option which will allow you to process the data filters on your server.</p>
+
+			<p><code class="pill">null</code>: Will remove any existing filters and reset the grid back to its default state.</p>
+
+			<p>A "filter set" array is defined as such:</p>
+			
+			<pre><code>[
+    [column_id, operator, value],
+    [column_id, operator, value]
+]</code></pre>
+			
+			<p>Where column_id is the ID value of a given column to filter against, the operator is a logical operator, and the value is a data value to match against.</p>
+
+			<p>Below is a list of supported operators:</p>
+			
+			<table>
+				<thead>
+					<tr>
+						<th>Operator</th>
+						<th>Description</th>
+						<th>Usage</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="textcenter">&lt;</td>
+						<td>Less than</td>
+						<td>1 &lt; 2</td>
+					</tr>
+					<tr>
+						<td class="textcenter">&lt;=</td>
+						<td>Less than or equal to</td>
+						<td>1 &lt;= 2</td>
+					</tr>
+					<tr>
+						<td class="textcenter">=</td>
+						<td>Equal</td>
+						<td>1 = 1</td>
+					</tr>
+					<tr>
+						<td class="textcenter">IN</td>
+						<td>Equal to one of</td>
+						<td>1 IN [1, 2, 3]</td>
+					</tr>
+					<tr>
+						<td class="textcenter">&gt;</td>
+						<td>Greater than</td>
+						<td>2 &gt; 1</td>
+					</tr>
+					<tr>
+						<td class="textcenter">&gt;=</td>
+						<td>Greater than or equal to</td>
+						<td>2 &gt;= 1</td>
+					</tr>
+					<tr>
+						<td class="textcenter">~</td>
+						<td>Match (regex), case sensitive</td>
+						<td>'thomas' ~ '*.thomas*.'</td>
+					</tr>
+					<tr>
+						<td class="textcenter">~*</td>
+						<td>Match (regex), case insensitive</td>
+						<td>'thomas' ~* '*.Thomas*.'</td>
+					</tr>
+					<tr>
+						<td class="textcenter">!~</td>
+						<td>Does not match (regex), case sensitive</td>
+						<td>'thomas' !~ '*.Thomas*.'</td>
+					</tr>
+					<tr>
+						<td class="textcenter">!~*</td>
+						<td>Does not match (regex), case insensitive</td>
+						<td>'thomas' !~ '*.michael*.'</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<p>Operators are case insensitive. (ie. 'in' is the same as 'IN').</p>
+			
+			<h5>Parameters</h5>
+
+			<blockquote>
+				<p><code class="pill strong">filter</code> <code class="pill">(function), (array), (null)</code> - Function used for filtering data items or object of column-based array filter set.</p>
+			</blockquote>
+			
+			<h5>Returns</h5>
+
+			<blockquote>
+				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+			</blockquote>
+
+			<h5>Example</h5>
+
+<pre><code class="language-javascript">// Simple filtering by a value in the data set
+new DobyGrid(...).filter(function (item) {
+    return item.data.enabled;
+});
+
+// Filtering using a simple filter set
+new DobyGrid(...).filter([
+    ['id', '=', 2]
+]);
+
+// Filtering against multiple columns at once
+new DobyGrid(...).filter([
+    ['id', '>', 2],
+    ['name', '~', 'test']
+]);
+
+// Filtering for multiple values for the same column
+new DobyGrid(...).filter([
+    ['id', 'IN', [1, 2, 3]]
+]);
+
+// Remove any active filters
+new DobyGrid(...).filter(null);
+
+// or simply
+new DobyGrid(...).filter();</code></pre>
+			
+			<h5>Demo</h5>
+			
+			<div>
+				<input id="grid-filter-input" placeholder="Filter by Name" type="text" />
+			</div>
+			
+			<div id="demo-grid"></div>
+		</div>
+	</div>
+</div>

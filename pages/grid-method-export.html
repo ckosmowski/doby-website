@@ -1,0 +1,47 @@
+<div class="row">
+	{{sidebar}}
+
+	<div class="large-9 medium-8 columns">
+		<div class="columns">
+			<h2><span class="pref">grid.</span>export()</h2>
+			<p>Export all grid data to a format of your choice.</p>
+			
+			<p>The results will be returned to you via a callback function.</p>
+			
+			<h5>Parameters</h5>
+
+			<blockquote>
+				<p><code class="pill strong">format</code> <code class="pill">(string)</code> - Which format to export to. Available formats are:</p>
+				<blockquote>
+					<ul class="no-bullet">
+						<li><code class="pill">csv</code> - For comma separate value string</li>
+						<li><code class="pill">html</code> - For an HTML table of data</li>
+					</ul>
+				</blockquote>
+				<p><code class="pill strong">callback</code> <code class="pill">(function)</code> - A callback function which will return the exported data.</p>
+			</blockquote>
+			
+			<h5>Returns</h5>
+
+			<blockquote>
+				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+			</blockquote>
+
+			<h5>Example</h5>
+
+<pre><code class="language-javascript">// Export the grid to a CSV string
+new DobyGrid(...).export('csv', function (result) {
+    // Process the 'result' here
+});
+
+// Export the grid to an HTML string
+new DobyGrid(...).export('html', function (result) {
+    // Process the 'result' here
+});</code></pre>
+			
+			<h5>Demo</h5>
+			
+			<div id="demo-grid"></div>
+		</div>
+	</div>
+</div>
