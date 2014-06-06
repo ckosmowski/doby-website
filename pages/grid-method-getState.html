@@ -1,0 +1,26 @@
+<div class="row">
+	{{sidebar}}
+
+	<div class="large-9 medium-8 columns">
+		<div class="columns">
+			<h2><span class="pref">grid.</span>getState()</h2>
+			<p>Retrieves a configuration object for the state of all user customizations for the grid. This allows you to easily restore states between page reloads.</p>
+
+			<p>You can listen to the <a href="#grid-events-statechage"><code class="pill">statechange</code></a> event to know when any user customizations have been done.</p>
+			
+			<h5>Returns</h5>
+
+			<blockquote>
+				<p><code class="pill strong">(object)</code> - An object of values which should be passed into <a href="#grid-method-restoreState"><code class="pill">grid.restoreState()</code></a>.</p>
+			</blockquote>
+
+			<h5>Example</h5>
+
+<pre><code class="language-javascript">new DobyGrid(...).getState();</code></pre>
+			
+			<h5>Demo</h5>
+			
+			<div id="demo-grid"></div>
+		</div>
+	</div>
+</div>
