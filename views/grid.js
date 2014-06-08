@@ -1,17 +1,17 @@
 define([
 	'underscore',
+	'text!templates/grid-docs.html',
 	'text!pages/grid.html',
-	'text!pages/grid-sidebar.html',
 	'dobygrid',
 	'js/sample-data'
-], function (_, template, sidebar, DobyGrid, data) {
+], function (_, template, page, DobyGrid, data) {
 	"use strict";
 	
 	return Backbone.DobyView.extend({
 		
 		initialize: function () {
 			var html = _.template(template, {
-				sidebar: sidebar
+				page: page
 			});
 			
 			this.$el.append(html);

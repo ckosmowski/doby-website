@@ -1,151 +1,147 @@
-<div class="row">
-	{{sidebar}}
+<div class="large-8 medium-8 columns">
+	<h2>Grid <span class="alpha">alpha</span></h2>
+	<p>Doby Grid is stand-alone module (part of the Doby JS framework) for rendering a dynamic, data-driven grid. It's basically a <span class="label radius secondary">&lt;table&gt;</span> element on steroids.</p>
+</div>
 
-	<div class="large-9 medium-8 columns">
-		<div class="large-8 medium-8 columns">
-			<h2>Grid <span class="alpha">alpha</span></h2>
-			<p>Doby Grid is stand-alone module (part of the Doby JS framework) for rendering a dynamic, data-driven grid. It's basically a <span class="label radius secondary">&lt;table&gt;</span> element on steroids.</p>
-		</div>
+<div class="large-4 medium-4 columns textcenter">
+	<a class="button" href="https://github.com/globexdesigns/doby-grid" style="margin-top:50px">View on GitHub</a>
+</div>
 
-		<div class="large-4 medium-4 columns textcenter">
-			<a class="button" href="https://github.com/globexdesigns/doby-grid" style="margin-top:50px">View on GitHub</a>
-		</div>
+<div class="columns" id="demo-grid">
+</div>
 
-		<div class="columns" id="demo-grid">
-		</div>
+<div class="columns">
+	<h3>Doby Grid isn't ready for general use yet</h3>
 
-		<div class="columns">
-			<h3>Doby Grid isn't ready for general use yet</h3>
+	<p>Doby Grid is currently in alpha and not yet intended for production use. The library changes very rapidly, often with breaking changes. API methods and functions get renamed and parameters are reconfigured frequently. Documentation is only partially complete.</p>
 
-			<p>Doby Grid is currently in alpha and not yet intended for production use. The library changes very rapidly, often with breaking changes. API methods and functions get renamed and parameters are reconfigured frequently. Documentation is only partially complete.</p>
+	<p>At this time we're looking for early testers who are interested in contributing to the development and testing of the library. Feel free to give it a spin and let us know what's missing.</p>
 
-			<p>At this time we're looking for early testers who are interested in contributing to the development and testing of the library. Feel free to give it a spin and let us know what's missing.</p>
+	<h3>Features</h3>
 
-			<h3>Features</h3>
+	<ul class="columns">
+		<li>Extremely fast rendering speed</li>
+		<li>Adaptive virtual scrolling (handle millions of rows with extreme responsiveness)</li>
+		<li>Data driven and fully MVC oriented</li>
+		<li>Table header that sticks to the top when you scroll</li>
+		<li>Ability to edit and create new rows and columns on the fly just like a spreadsheet</li>
+		<li>Ability to resize/reorder/show/hide/auto-resize columns</li>
+		<li>Ability to sort by more than 1 column at a time (multi-sort)</li>
+		<li>Ability to group rows by a column value (including nested groups)</li>
+		<li>Ability to double-click on column separator to maximize the column based its contents</li>
+		<li>Ability to resize rows and insert rows of any height</li>
+		<li>Ability to click+drag to select cells</li>
+		<li>Ability to define multiple rows for a single data item</li>
+		<li>Ability to export CSV/JSON/HTML data</li>
+		<li>Support for column footers with data aggregators</li>
+		<li>Support for on-the-fly filtering of column data (and searching)</li>
+		<li>Support for clipboard copy operations</li>
+		<li>Support for Backbone.Collection objects as data sets (including remote data fetching)</li>
+		<li>Easily integrates with i18n libraries</li>
+		<li>Full keyboard navigation</li>
+		<li>Pixel perfect, rock solid and stress tested with hundreds of <a href="https://github.com/globexdesigns/doby-grid/tree/master/tests">tests</a>
+		</li>
+	</ul>
 
-			<ul class="columns">
-				<li>Extremely fast rendering speed</li>
-				<li>Adaptive virtual scrolling (handle millions of rows with extreme responsiveness)</li>
-				<li>Data driven and fully MVC oriented</li>
-				<li>Table header that sticks to the top when you scroll</li>
-				<li>Ability to edit and create new rows and columns on the fly just like a spreadsheet</li>
-				<li>Ability to resize/reorder/show/hide/auto-resize columns</li>
-				<li>Ability to sort by more than 1 column at a time (multi-sort)</li>
-				<li>Ability to group rows by a column value (including nested groups)</li>
-				<li>Ability to double-click on column separator to maximize the column based its contents</li>
-				<li>Ability to resize rows and insert rows of any height</li>
-				<li>Ability to click+drag to select cells</li>
-				<li>Ability to define multiple rows for a single data item</li>
-				<li>Ability to export CSV/JSON/HTML data</li>
-				<li>Support for column footers with data aggregators</li>
-				<li>Support for on-the-fly filtering of column data (and searching)</li>
-				<li>Support for clipboard copy operations</li>
-				<li>Support for Backbone.Collection objects as data sets (including remote data fetching)</li>
-				<li>Easily integrates with i18n libraries</li>
-				<li>Full keyboard navigation</li>
-				<li>Pixel perfect, rock solid and stress tested with hundreds of <a href="https://github.com/globexdesigns/doby-grid/tree/master/tests">tests</a>
-				</li>
-			</ul>
+	<h3>Dependencies</h3>
 
-			<h3>Dependencies</h3>
+	<ul>
+		<li><a href="http://jquery.com/"><strong>jQuery 2.0.3</strong></a></li>
+		<li><a href="http://underscorejs.org/"><strong>Underscore 1.5.2</strong></a></li>
+		<li><a href="http://backbonejs.org/"><strong>Backbone 1.1.0</strong></a></li>
+	</ul>
 
+	<h3>Optional Dependencies</h3>
+
+	<ul>
+		<li>
+			<a href="http://jqueryui.com/"><strong>jQuery.ui.sortable</strong></a>
 			<ul>
-				<li><a href="http://jquery.com/"><strong>jQuery 2.0.3</strong></a></li>
-				<li><a href="http://underscorejs.org/"><strong>Underscore 1.5.2</strong></a></li>
-				<li><a href="http://backbonejs.org/"><strong>Backbone 1.1.0</strong></a></li>
+				<li>for column re-ordering</li>
 			</ul>
-
-			<h3>Optional Dependencies</h3>
-
+		</li>
+		<li>
+			<a href="http://threedubmedia.com/code/event/drag"><strong>jquery.event.drag</strong></a>
 			<ul>
-				<li>
-					<a href="http://jqueryui.com/"><strong>jQuery.ui.sortable</strong></a>
-					<ul>
-						<li>for column re-ordering</li>
-					</ul>
-				</li>
-				<li>
-					<a href="http://threedubmedia.com/code/event/drag"><strong>jquery.event.drag</strong></a>
-					<ul>
-						<li>for column and row re-sizing and cell range selection</li>
-					</ul>
-				</li>
-				<li>
-					<a href="https://github.com/eligrey/FileSaver.js"><strong>FileSaver</strong></a>
-					<ul>
-						<li>for data export functionality</li>
-					</ul>
-				</li>
+				<li>for column and row re-sizing and cell range selection</li>
 			</ul>
-
-			<h3>Limitations</h3>
-
-			<p>If your grid is rendered inside an invisible element, or an element that is resized - you will need to manually call the resize() method to correct the rendering. Window resizing is auto-detected however.</p>
-
-			<hr/>
-
-			<h3>How To Use</h3>
-
-			<p>Grab the latest version from <a href="https://github.com/globexdesigns/doby-grid/releases">https://github.com/globexdesigns/doby-grid/releases</a>.</p>
-
-			<p>Doby Grid is made up of two files (doby-grid.js and doby-grid.css) and well as a theme package. You can choose which theme to download and use. You may also want to grab <a href="https://github.com/globexdesigns/doby-grid/tree/master/assets">https://github.com/globexdesigns/doby-grid/tree/master/assets</a> for images.</p>
-
-			<p>Then include it into your app either via Require JS, or by adding &lt;script&gt; and &lt;link&gt; tags to load in the Javascript and CSS files after the required dependencies.</p>
-
-			<p>Then simply call:</p>
-
-			<pre class="prettyprint">new DobyGrid({...}).appendTo($(document.body))</pre>
-
-			<h3>Change Logs</h3>
-
-			<p>Change logs for our releases can be found here: <a href="https://github.com/globexdesigns/doby-grid/releases">https://github.com/globexdesigns/doby-grid/releases</a>.</p>
-
-			<h3>Submitting Bugs and Feature Requests</h3>
-
-			<p>Please use GitHub issues: <a href="https://github.com/globexdesigns/doby-grid/issues">https://github.com/globexdesigns/doby-grid/issues</a></p>
-
-			<hr/>
-
-			<h3>FAQ</h3>
-
-			<h4>Why is Backbone a required module? Can't I use Angular, Knockout, or another MVC?</h4>
-
-			<p>The Backbone is used for in Doby Grid for two reasons:</p>
-
-			<p>1) To make use of Backbone's great event objects for generating custom events
-			2) To easily integrate Doby Grid into the Doby framework</p>
-
-			<p>You can easily use another MVC module in your application, but Doby Grid needs Backbone to do its internal processing. If you're not a fan of Backbone -- don't worry -- it shouldn't affect anything you may be doing in your app with other frameworks, and its overhead is quite small.</p>
-
-			<h4>This looks exactly like SlickGrid. What's the difference?</h4>
-
-			<p>Doby Grid was indeed started as a fork of SlickGrid <a href="https://github.com/mleibman/SlickGrid">https://github.com/mleibman/SlickGrid</a> but quickly evolved far beyond that. SlickGrid gives you module pieces and a raw foundation for building a grid, and expects you to fill in a lot of the blanks. This is simply too much work for what we wanted to do, so we created Doby Grid that packages the great work SlickGrid started into a nice single package requiring minimal out-of-the-box configuration.</p>
-
-			<p>Additionally, there are several other key differences. Doby Grid:</p>
-
+		</li>
+		<li>
+			<a href="https://github.com/eligrey/FileSaver.js"><strong>FileSaver</strong></a>
 			<ul>
-				<li>supports variable (and re-sizable) row heights (<a href="http://stackoverflow.com/questions/2805094/is-variable-rowheight-a-possibility-in-slickgrid">http://stackoverflow.com/questions/2805094/is-variable-rowheight-a-possibility-in-slickgrid</a>)</li>
-				<li>supports grouping of remote data sets (<a href="https://github.com/mleibman/SlickGrid/issues/199)">https://github.com/mleibman/SlickGrid/issues/199)</a>)</li>
-				<li>supports nested row data</li>
-				<li>provide easy access to common functionality such as cell range selection, grouping and editors without the need to write "plugins"</li>
-				<li>integrates with Backbone Models and Collections</li>
-				<li>comes in a single AMD-supported library, instead of various pieces that need to be compiled together</li>
-				<li>does <em>not</em> support jQuery UI Themes</li>
+				<li>for data export functionality</li>
 			</ul>
+		</li>
+	</ul>
 
-			<p>Doby Grid tries to find a balance between performance and usability while offering developers ways to control which features they want to enable at a potential performance cost.</p>
+	<h3>Limitations</h3>
 
-			<h4>So it's like BackGrid then...</h4>
+	<p>If your grid is rendered inside an invisible element, or an element that is resized - you will need to manually call the resize() method to correct the rendering. Window resizing is auto-detected however.</p>
 
-			<p>Nope. BackGrid <a href="https://github.com/wyuenho/backgrid">https://github.com/wyuenho/backgrid</a> has Backbone at its core for everything. Although it offers great flexibility because of the simplicity of having a Backbone API -- putting Backbone into the heart of the grid processing has made it much slower in processing your data sets. Doby Grid tries its best to keep up to the speed standards of SlickGrid.</p>
+	<hr/>
 
-			<h4>So it's like SlickBack then...</h4>
+	<h3>How To Use</h3>
 
-			<p>Not really. SlickBack <a href="https://github.com/teleological/slickback">https://github.com/teleological/slickback</a> is a bridge between Backbone and SlickGrid. It tries to make the two work together nicely. Doby Grid doesn't require you to use Backbone or SlickGrid in your web application.</p>
+	<p>Grab the latest version from <a href="https://github.com/globexdesigns/doby-grid/releases">https://github.com/globexdesigns/doby-grid/releases</a>.</p>
 
-			<h4>I have a button inside a grid cell and I want to add a click event that picks up the id of the row data? How do I attach this event?</h4>
+	<p>Doby Grid is made up of two files (doby-grid.js and doby-grid.css) and well as a theme package. You can choose which theme to download and use. You may also want to grab <a href="https://github.com/globexdesigns/doby-grid/tree/master/assets">https://github.com/globexdesigns/doby-grid/tree/master/assets</a> for images.</p>
 
-			<p>You have to attach the event to the whole grid and then isolate the cell you want. Attaching events is expensive so all events are attached to the container and then filtered down to the cell you want to focus on.</p>
+	<p>Then include it into your app either via Require JS, or by adding &lt;script&gt; and &lt;link&gt; tags to load in the Javascript and CSS files after the required dependencies.</p>
+
+	<p>Then simply call:</p>
+
+	<pre class="prettyprint">new DobyGrid({...}).appendTo($(document.body))</pre>
+
+	<h3>Change Logs</h3>
+
+	<p>Change logs for our releases can be found here: <a href="https://github.com/globexdesigns/doby-grid/releases">https://github.com/globexdesigns/doby-grid/releases</a>.</p>
+
+	<h3>Submitting Bugs and Feature Requests</h3>
+
+	<p>Please use GitHub issues: <a href="https://github.com/globexdesigns/doby-grid/issues">https://github.com/globexdesigns/doby-grid/issues</a></p>
+
+	<hr/>
+
+	<h3>FAQ</h3>
+
+	<h4>Why is Backbone a required module? Can't I use Angular, Knockout, or another MVC?</h4>
+
+	<p>The Backbone is used for in Doby Grid for two reasons:</p>
+
+	<p>1) To make use of Backbone's great event objects for generating custom events
+	2) To easily integrate Doby Grid into the Doby framework</p>
+
+	<p>You can easily use another MVC module in your application, but Doby Grid needs Backbone to do its internal processing. If you're not a fan of Backbone -- don't worry -- it shouldn't affect anything you may be doing in your app with other frameworks, and its overhead is quite small.</p>
+
+	<h4>This looks exactly like SlickGrid. What's the difference?</h4>
+
+	<p>Doby Grid was indeed started as a fork of SlickGrid <a href="https://github.com/mleibman/SlickGrid">https://github.com/mleibman/SlickGrid</a> but quickly evolved far beyond that. SlickGrid gives you module pieces and a raw foundation for building a grid, and expects you to fill in a lot of the blanks. This is simply too much work for what we wanted to do, so we created Doby Grid that packages the great work SlickGrid started into a nice single package requiring minimal out-of-the-box configuration.</p>
+
+	<p>Additionally, there are several other key differences. Doby Grid:</p>
+
+	<ul>
+		<li>supports variable (and re-sizable) row heights (<a href="http://stackoverflow.com/questions/2805094/is-variable-rowheight-a-possibility-in-slickgrid">http://stackoverflow.com/questions/2805094/is-variable-rowheight-a-possibility-in-slickgrid</a>)</li>
+		<li>supports grouping of remote data sets (<a href="https://github.com/mleibman/SlickGrid/issues/199)">https://github.com/mleibman/SlickGrid/issues/199)</a>)</li>
+		<li>supports nested row data</li>
+		<li>provide easy access to common functionality such as cell range selection, grouping and editors without the need to write "plugins"</li>
+		<li>integrates with Backbone Models and Collections</li>
+		<li>comes in a single AMD-supported library, instead of various pieces that need to be compiled together</li>
+		<li>does <em>not</em> support jQuery UI Themes</li>
+	</ul>
+
+	<p>Doby Grid tries to find a balance between performance and usability while offering developers ways to control which features they want to enable at a potential performance cost.</p>
+
+	<h4>So it's like BackGrid then...</h4>
+
+	<p>Nope. BackGrid <a href="https://github.com/wyuenho/backgrid">https://github.com/wyuenho/backgrid</a> has Backbone at its core for everything. Although it offers great flexibility because of the simplicity of having a Backbone API -- putting Backbone into the heart of the grid processing has made it much slower in processing your data sets. Doby Grid tries its best to keep up to the speed standards of SlickGrid.</p>
+
+	<h4>So it's like SlickBack then...</h4>
+
+	<p>Not really. SlickBack <a href="https://github.com/teleological/slickback">https://github.com/teleological/slickback</a> is a bridge between Backbone and SlickGrid. It tries to make the two work together nicely. Doby Grid doesn't require you to use Backbone or SlickGrid in your web application.</p>
+
+	<h4>I have a button inside a grid cell and I want to add a click event that picks up the id of the row data? How do I attach this event?</h4>
+
+	<p>You have to attach the event to the whole grid and then isolate the cell you want. Attaching events is expensive so all events are attached to the container and then filtered down to the cell you want to focus on.</p>
 
 <pre><code>grid.on('click', function (event, args) {
 	if ($(event.target).hasClass("my-button")) {
@@ -153,20 +149,18 @@
 	}
 });</code></pre>
 
-			<h4>Why can't I assign events directly to my button?</h4>
+	<h4>Why can't I assign events directly to my button?</h4>
 
-			<p>This would require the grid to be rendered with DOM references - making it much, MUCH slower. If you want to use Doby Grid you must assign events as shown in the question above.</p>
+	<p>This would require the grid to be rendered with DOM references - making it much, MUCH slower. If you want to use Doby Grid you must assign events as shown in the question above.</p>
 
-			<h4>Ok, well what about if I absolutely cannot draw my cell until Doby Grid has finished rendering? Maybe it's a cell that's rendered after an ajax event is fired, or has some other external conditions...</h4>
+	<h4>Ok, well what about if I absolutely cannot draw my cell until Doby Grid has finished rendering? Maybe it's a cell that's rendered after an ajax event is fired, or has some other external conditions...</h4>
 
-			<p>If delegating events isn't enough, then you can use post-processing as demonstrated in the post-processing example. See the <a href="https://github.com/globexdesigns/doby-grid/wiki/Column-Options#wiki-grid-method-postprocess">postprocess</a> Column Option for documentation. Keep in mind that this is going to have a very significant rendering performance hit and is not recommended on large grids.</p>
+	<p>If delegating events isn't enough, then you can use post-processing as demonstrated in the post-processing example. See the <a href="https://github.com/globexdesigns/doby-grid/wiki/Column-Options#wiki-grid-method-postprocess">postprocess</a> Column Option for documentation. Keep in mind that this is going to have a very significant rendering performance hit and is not recommended on large grids.</p>
 
-			<p>And just to be clear -- do not use this for trying to assign events to your cell. It won't work and will only make your grid slow. All those references will be wiped when the grid is re-rendered or scrolled. Don't bother.</p>
+	<p>And just to be clear -- do not use this for trying to assign events to your cell. It won't work and will only make your grid slow. All those references will be wiped when the grid is re-rendered or scrolled. Don't bother.</p>
 
-			<h4>There's a bug in Internet Explorer...</h4>
+	<h4>There's a bug in Internet Explorer...</h4>
 
-			<p>Doby Grid does not support Internet Explorer. Don't bother posting bug reports. If it's something that affects all browsers - definitely let us know, but if it's an issue specific to IE6 or IE7 or IE8 or even IE9 -- sorry, Doby Grid is not for you.</p>
+	<p>Doby Grid does not support Internet Explorer. Don't bother posting bug reports. If it's something that affects all browsers - definitely let us know, but if it's an issue specific to IE6 or IE7 or IE8 or even IE9 -- sorry, Doby Grid is not for you.</p>
 
-		</div>
-	</div>
 </div>
