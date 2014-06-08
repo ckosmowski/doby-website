@@ -1,34 +1,26 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>removeColumn(<span class="param">column</span>)</h2>
+<p>Removes a column from the grid.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>removeColumn(<span class="param">column</span>)</h2>
-			<p>Removes a column from the grid.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">column</code> <code class="pill green">(object), (string)</code> - A column definition object, or a column 'id' value.</p>
-			</blockquote>
-			
-			<h5>Returns</h5>
+<blockquote>
+	<p><code class="pill strong">column</code> <code class="pill green">(object), (string)</code> - A column definition object, or a column 'id' value.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<h5>Returns</h5>
 
-			<h5>Example</h5>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">// Remove a column using the column definition object
 new DobyGrid(...).removeColumn({id: 'mycolumn', name: 'My Column'});
 
 // Remove a column using the column's id
 new DobyGrid(...).removeColumn('mycolumn');</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

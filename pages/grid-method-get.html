@@ -1,34 +1,26 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>get(<span class="param">obj</span>)</h2>
+<p>Get a model from the grid collection, specified by an id or by passing in a model.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>get(<span class="param">obj</span>)</h2>
-			<p>Get a model from the grid collection, specified by an id or by passing in a model.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">obj</code> <code class="pill green">(object), (integer)</code> - Data model or id value for the model to get.</p>
-			</blockquote>
-			
-			<h5>Returns</h5>
+<blockquote>
+	<p><code class="pill strong">obj</code> <code class="pill green">(object), (integer)</code> - Data model or id value for the model to get.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A data model object.</p>
-			</blockquote>
+<h5>Returns</h5>
 
-			<h5>Example</h5>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A data model object.</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">// Get by id
 new DobyGrid(...).get(5);
 
 // Get by model reference
 new DobyGrid(...).get({id: 23, name: 'bob', age: 75});</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

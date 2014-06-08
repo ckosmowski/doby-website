@@ -1,39 +1,31 @@
-<div class="row">
-	{{sidebar}}
+	<h2><span class="pref">grid.</span>selectCells(<span class="param">startRow</span>, <span class="param">startCell</span>, <span class="param">endRow</span>, <span class="param">endCell</span>)</h2>
+	<p>Programmatically select a range of cells on the grid. The <a href="#grid-options-selectable"><code class="pill">options.selectable</code></a> parameter must be enabled for this to work.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>selectCells(<span class="param">startRow</span>, <span class="param">startCell</span>, <span class="param">endRow</span>, <span class="param">endCell</span>)</h2>
-			<p>Programmatically select a range of cells on the grid. The <a href="#grid-options-selectable"><code class="pill">options.selectable</code></a> parameter must be enabled for this to work.</p>
+	<p>If you don't pass it any parameters, all current selections will be deselected.</p>
 
-			<p>If you don't pass it any parameters, all current selections will be deselected.</p>
-			
-			<h5>Parameters</h5>
+	<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">startRow</code> <code class="pill green">(integer)</code> - Index of the row on which to start the selection.</p>
-				<p><code class="pill strong">startCell</code> <code class="pill green">(integer)</code> - Index of the cell on which to start the selection.</p>
-				<p><code class="pill strong">endRow</code> <code class="pill green">(integer)</code> - Index of the row on which to end the selection.</p>
-				<p><code class="pill strong">endCell</code> <code class="pill green">(integer)</code> - Index of the cell on which to end the selection.</p>
-			</blockquote>
-			
-			<h5>Returns</h5>
+	<blockquote>
+		<p><code class="pill strong">startRow</code> <code class="pill green">(integer)</code> - Index of the row on which to start the selection.</p>
+		<p><code class="pill strong">startCell</code> <code class="pill green">(integer)</code> - Index of the cell on which to start the selection.</p>
+		<p><code class="pill strong">endRow</code> <code class="pill green">(integer)</code> - Index of the row on which to end the selection.</p>
+		<p><code class="pill strong">endCell</code> <code class="pill green">(integer)</code> - Index of the cell on which to end the selection.</p>
+	</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
-			
-			<h5>Example</h5>
+	<h5>Returns</h5>
+
+	<blockquote>
+		<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+	</blockquote>
+
+	<h5>Example</h5>
 
 <pre><code class="language-javascript">// Select cells (0,0) to (5,5)
 new DobyGrid(...).selectCells(0, 0, 5, 5);
 
 // Deselect everything
 new DobyGrid(...).selectCells();</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+	<h5>Demo</h5>
+
+	<div id="demo-grid"></div>

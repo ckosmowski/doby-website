@@ -1,33 +1,25 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>setColumns(<span class="param">columns</span>)</h2>
+<p>Given a new column definition array - will update the grid to use the new definitions. Allows you to perform bulk <a href="#grid-method-addColumn">grid.addColumn()</a>/<a href="#grid-method-removeColumn">grid.removeColumn()</a> operations.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>setColumns(<span class="param">columns</span>)</h2>
-			<p>Given a new column definition array - will update the grid to use the new definitions. Allows you to perform bulk <a href="#grid-method-addColumn">grid.addColumn()</a>/<a href="#grid-method-removeColumn">grid.removeColumn()</a> operations.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">columns</code> <code class="pill green">(array)</code> - A list of column definition objects, as per Column Options</p>
-			</blockquote>
-			
-			<h5>Returns</h5>
+<blockquote>
+	<p><code class="pill strong">columns</code> <code class="pill green">(array)</code> - A list of column definition objects, as per Column Options</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<h5>Returns</h5>
 
-			<h5>Example</h5>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">new DobyGrid(...).setColumns([
     {id: 'mycolumn', name: 'My Column'},
     {id: 'anothercolumn', name: 'My Other Column'}
 ]);</code></pre>
 			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

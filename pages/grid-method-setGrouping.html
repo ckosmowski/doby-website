@@ -1,50 +1,42 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>setGrouping(<span class="param">options</span>)</h2>
+<p>Given a list of column grouping objects, will add grouping by those columns. The groups are assigned in the order of columns given.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>setGrouping(<span class="param">options</span>)</h2>
-			<p>Given a list of column grouping objects, will add grouping by those columns. The groups are assigned in the order of columns given.</p>
+<h5>Parameters</h5>
 
-			<h5>Parameters</h5>
+<blockquote>
+	<p><code class="pill strong">options</code> <code class="pill green">(array)</code> - A list of column grouping objects.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">options</code> <code class="pill green">(array)</code> - A list of column grouping objects.</p>
-			</blockquote>
-			
-			<h5>Options</h5>
-			
-			<p>A grouping object consists of the following key/value pairs:</p>
-			
-			<blockquote>
-				<p><code class="pill strong">options[x].class</code> <code class="pill green">(string)</code> - A custom CSS class name to add to this group's header row.</p>
-				<p><code class="pill strong">options[x].collapsed</code> <code class="pill green">(boolean)</code> - Should this grouping be collapsed? (Default true).</p>
-				<p><code class="pill strong">options[x].column_id</code> <code class="pill green">(string)</code> - ID of the column by which to group.</p>
-				<p><code class="pill strong">options[x].comparer</code> <code class="pill green">(function)</code> - Comparer function for sorting the grouping header rows.</p>
-				<p><code class="pill strong">options[x].formatter</code> <code class="pill green">(function)</code> - Formatter function for the grouping header row.</p>
-				<p><code class="pill strong">options[x].getter</code> <code class="pill green">(function)</code> - Getter function for pulling the value of the given column into the grouping header row.</p>
-				<p><code class="pill strong">options[x].groupNulls</code> <code class="pill green">(boolean)</code> - This option determines how null values should be handled. By default, null values will be grouped under a group called "null", however, you can set this option to false to hide the grouping row object for the "null" group.</p>
-				<p><code class="pill strong">options[x].rowSpacing</code> <code class="pill green">(integer)</code> - A custom row spacing to use for this group's header rows.</p>
-				<p><code class="pill strong">options[x].sticky</code> <code class="pill green">(boolean)</code> - If <a href="#grid-options-stickyGroupRows"><code class="pill">options.stickyGroupRows</code></a> is used - should this grouping stick to the top? Default is true.</p>
-			</blockquote>
-			
-			<h5>Returns</h5>
+<h5>Options</h5>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<p>A grouping object consists of the following key/value pairs:</p>
 
-			<h5>Example</h5>
+<blockquote>
+	<p><code class="pill strong">options[x].class</code> <code class="pill green">(string)</code> - A custom CSS class name to add to this group's header row.</p>
+	<p><code class="pill strong">options[x].collapsed</code> <code class="pill green">(boolean)</code> - Should this grouping be collapsed? (Default true).</p>
+	<p><code class="pill strong">options[x].column_id</code> <code class="pill green">(string)</code> - ID of the column by which to group.</p>
+	<p><code class="pill strong">options[x].comparer</code> <code class="pill green">(function)</code> - Comparer function for sorting the grouping header rows.</p>
+	<p><code class="pill strong">options[x].formatter</code> <code class="pill green">(function)</code> - Formatter function for the grouping header row.</p>
+	<p><code class="pill strong">options[x].getter</code> <code class="pill green">(function)</code> - Getter function for pulling the value of the given column into the grouping header row.</p>
+	<p><code class="pill strong">options[x].groupNulls</code> <code class="pill green">(boolean)</code> - This option determines how null values should be handled. By default, null values will be grouped under a group called "null", however, you can set this option to false to hide the grouping row object for the "null" group.</p>
+	<p><code class="pill strong">options[x].rowSpacing</code> <code class="pill green">(integer)</code> - A custom row spacing to use for this group's header rows.</p>
+	<p><code class="pill strong">options[x].sticky</code> <code class="pill green">(boolean)</code> - If <a href="#grid-options-stickyGroupRows"><code class="pill">options.stickyGroupRows</code></a> is used - should this grouping stick to the top? Default is true.</p>
+</blockquote>
+
+<h5>Returns</h5>
+
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">// Group by two columns
 new DobyGrid(...).setGrouping([{column_id: 'first_category'}, {column_id: 'second_category'}]);
 
 // Clear all groupings
 new DobyGrid(...).setGrouping();</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

@@ -1,30 +1,22 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>hideColumn(<span class="param">column_id</span>)</h2>
+<p>Removes a column from view, but keeps it in the grid's memory bank so that user can re-add it later.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>hideColumn(<span class="param">column_id</span>)</h2>
-			<p>Removes a column from view, but keeps it in the grid's memory bank so that user can re-add it later.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">column_id</code> <code class="pill green">(string)</code> - The 'id' value of the column to hide.</p>
-			</blockquote>
-			
-			<h5>Returns</h5>
+<blockquote>
+	<p><code class="pill strong">column_id</code> <code class="pill green">(string)</code> - The 'id' value of the column to hide.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<h5>Returns</h5>
 
-			<h5>Example</h5>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">new DobyGrid(...).hideColumn('mycolumn');</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

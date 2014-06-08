@@ -1,24 +1,19 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>reset(<span class="param">models</span>)</h2>
+<p>A way to update the data set for the grid in bulk, or to empty the grid.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>reset(<span class="param">models</span>)</h2>
-			<p>A way to update the data set for the grid in bulk, or to empty the grid.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">models</code> <code class="pill green">(array)</code> - (Optional) A list of data objects to set as the new data collection for the grid..</p>
-			</blockquote>
-			
-			<h5>Returns</h5>
+<blockquote>
+	<p><code class="pill strong">models</code> <code class="pill green">(array)</code> - (Optional) A list of data objects to set as the new data collection for the grid..</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<h5>Returns</h5>
 
-			<h5>Example</h5>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">// Replace the existing data with a new data set
 new DobyGrid(...).reset([{...}, {...}]);
@@ -26,9 +21,6 @@ new DobyGrid(...).reset([{...}, {...}]);
 // Empty the grid
 new DobyGrid(...).reset();</code></pre>
 			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

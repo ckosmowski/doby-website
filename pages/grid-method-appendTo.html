@@ -1,32 +1,24 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>appendTo(<span class="param">target</span>)</h2>
+<p>Similar to <a href="http://api.jquery.com/appendTo/" target="_blank">jQuery's appendTo()</a>, will insert the grid element into the DOM at the end of the target.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>appendTo(<span class="param">target</span>)</h2>
-			<p>Similar to <a href="http://api.jquery.com/appendTo/" target="_blank">jQuery's appendTo()</a>, will insert the grid element into the DOM at the end of the target.</p>
+<p>It's only at this point that the grid becomes fully initialized, events get assigned and viewports calculated. This allows you to initialize your grid objects before inserting them into the DOM.</p>
 
-			<p>It's only at this point that the grid becomes fully initialized, events get assigned and viewports calculated. This allows you to initialize your grid objects before inserting them into the DOM.</p>
+<p><strong>NOTE:</strong> It's important that the target element which you're inserting the grid into has a fixed height and width defined. The grid itself has a height of 0, and will rely on this target container to determine its dimensions.</p>
 
-			<p><strong>NOTE:</strong> It's important that the target element which you're inserting the grid into has a fixed height and width defined. The grid itself has a height of 0, and will rely on this target container to determine its dimensions.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">target</code> <code class="pill green">(object)</code> - A jQuery selector, DOM element, HTML string, or jQuery object into which the grid is inserted.</p>
-			</blockquote>
-			
-			<h5>Returns</h5>
+<blockquote>
+	<p><code class="pill strong">target</code> <code class="pill green">(object)</code> - A jQuery selector, DOM element, HTML string, or jQuery object into which the grid is inserted.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<h5>Returns</h5>
 
-			<h5>Example</h5>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">new DobyGrid(...).appendTo($(document.body));
 new DobyGrid(...).appendTo($('&lt;div&gt;&lt;/div&gt;'));
 new DobyGrid(...).appendTo('#myelement');</code></pre>
-		</div>
-	</div>
-</div>

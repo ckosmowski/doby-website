@@ -41,7 +41,34 @@ define([], function () {
 		
 		// Custom Backbone View for all pages
 		Backbone.DobyView = Backbone.View.extend({
-			className: 'page'
+			events: {
+				"keyup #doc-search":		"docSearch"
+			},
+			
+			className: 'page',
+			
+			
+			/**
+			 * Filters the documentation sidebar when users type into the "Search Docs" input
+			 * @method docSearch
+			 * @memberof DobyView
+			 * 
+			 * @param	{object}	event		- Javascript event object
+			 * 
+			 */
+			docSearch: function (event) {
+				var value = $(event.currentTarget).val();
+				
+				this.$el.find('.sidebar .side-nav li').each(function () {
+					// Re-enable everything first
+					$(this).show();
+					
+					// Hide items which are filtered out
+					if (value.length > 0 && $(this).text().toLowerCase().indexOf(value.toLowerCase()) < 0) {
+						$(this).hide();
+					}
+				});
+			}
 		});
 		
 		// Change to handlebars to allow <% %> to render Python

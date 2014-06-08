@@ -1,17 +1,17 @@
 define([
 	'underscore',
+	'text!templates/grid-docs.html',
 	'text!pages/grid-method-refetch.html',
-	'text!pages/grid-sidebar.html',
 	'dobygrid',
 	'js/sample-fetcher'
-], function (_, template, sidebar, DobyGrid, remotedata) {
+], function (_, template, page, DobyGrid, remotedata) {
 	"use strict";
 	
 	return Backbone.DobyView.extend({
 		
 		initialize: function () {
 			var html = _.template(template, {
-				sidebar: sidebar
+				page: page
 			});
 			
 			this.$el.append(html);

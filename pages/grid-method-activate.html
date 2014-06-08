@@ -1,35 +1,27 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>activate(<span class="param">row</span>, <span class="param">cell</span>)</h2>
+<p>Activate a cell on the grid. Calling this function with no arguments will deselect any active cells.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>activate(<span class="param">row</span>, <span class="param">cell</span>)</h2>
-			<p>Activate a cell on the grid. Calling this function with no arguments will deselect any active cells.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">row</code> <code class="pill green">(integer)</code> - The index of the row in which your cell will be activated.</p>
-				<p><code class="pill strong">cell</code> <code class="pill green">(integer)</code> - The index of the cell in the row you want to activate.</p>
-			</blockquote>
+<blockquote>
+	<p><code class="pill strong">row</code> <code class="pill green">(integer)</code> - The index of the row in which your cell will be activated.</p>
+	<p><code class="pill strong">cell</code> <code class="pill green">(integer)</code> - The index of the cell in the row you want to activate.</p>
+</blockquote>
 
-			<h5>Returns</h5>
+<h5>Returns</h5>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
 
-			<h5>Example</h5>
+<h5>Example</h5>
 
 <pre><code class="language-javascript">// Activate the first cell
 new DobyGrid(...).activate(0, 0)
 
 // De-activate all cells
 new DobyGrid(...).activate()</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

@@ -1,42 +1,34 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>addColumn(<span class="param">data</span>, <span class="param">options</span>)</h2>
+<p>Add a new column definition to an existing grid instance.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>addColumn(<span class="param">data</span>, <span class="param">options</span>)</h2>
-			<p>Add a new column definition to an existing grid instance.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">data</code> <code class="pill green">(object)</code> - Column data options</p>
-				<p><code class="pill strong">options</code> <code class="pill green">(object)</code> - (Optional) Additional options for handling the insert.</p>
-			</blockquote>
-			
-			<h5>Options</h5>
+<blockquote>
+	<p><code class="pill strong">data</code> <code class="pill green">(object)</code> - Column data options</p>
+	<p><code class="pill strong">options</code> <code class="pill green">(object)</code> - (Optional) Additional options for handling the insert.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">at</code> <code class="pill green">(integer)</code> - The index at which to splice the column into the grid.</p>
-				<p><code class="pill strong">merge</code> <code class="pill green">(boolean)</code> - Check to see if columns with the given id already exist. If they do - merge their data.</p>
-			</blockquote>
+<h5>Options</h5>
 
-			<h5>Returns</h5>
+<blockquote>
+	<p><code class="pill strong">at</code> <code class="pill green">(integer)</code> - The index at which to splice the column into the grid.</p>
+	<p><code class="pill strong">merge</code> <code class="pill green">(boolean)</code> - Check to see if columns with the given id already exist. If they do - merge their data.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<h5>Returns</h5>
 
-			<h5>Example</h5>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">// Add a column at the front of the grid
 new DobyGrid(...).addColumn({...}, {at: 0})
 
 // Add a column at the end of the grid
 new DobyGrid(...).addColumn({...})</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

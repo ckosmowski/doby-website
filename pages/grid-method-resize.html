@@ -1,28 +1,20 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>resize(<span class="param">models</span>)</h2>
+<p>Re-size and redraw the grid using the current measurements of its container and viewport.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>resize(<span class="param">models</span>)</h2>
-			<p>Re-size and redraw the grid using the current measurements of its container and viewport.</p>
+<p>This will need to be called if you insert your grid into a hidden or off-screen DOM element. You do not need to call this when the browser's window is re-sized -- Doby Grid already automatically detects that.</p>
 
-			<p>This will need to be called if you insert your grid into a hidden or off-screen DOM element. You do not need to call this when the browser's window is re-sized -- Doby Grid already automatically detects that.</p>
-			
-			<h5>Returns</h5>
+<h5>Returns</h5>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
 
-			<h5>Example</h5>
+<h5>Example</h5>
 
 <pre><code class="language-javascript">new DobyGrid(...).resize();</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<p>In this demo, grid.resize will be called automatically as you resize the container:</p>
-			
-			<div id="demo-grid" style="padding:0"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<p>In this demo, grid.resize will be called automatically as you resize the container:</p>
+
+<div id="demo-grid" style="padding:0"></div>

@@ -1,43 +1,35 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>addGrouping(<span class="param">data</span>, <span class="param">options</span>)</h2>
+<p>If <a href="#grid-options-groupable"><code class="pill">options.groupable</code></a> is enabled, this will add a new grouping layer to the grid. It allows you create nested groups.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>addGrouping(<span class="param">data</span>, <span class="param">options</span>)</h2>
-			<p>If <a href="#grid-options-groupable"><code class="pill">options.groupable</code></a> is enabled, this will add a new grouping layer to the grid. It allows you create nested groups.</p>
-			
-			<p>You can pass in additional options to override default grouping settings.</p>
-			
-			<h5>Parameters</h5>
+<p>You can pass in additional options to override default grouping settings.</p>
 
-			<blockquote>
-				<p><code class="pill strong">column_id</code> <code class="pill green">(string)</code> - Id of the column by which to group by.</p>
-				<p><code class="pill strong">options</code> <code class="pill green">(object)</code> - (Optional) Custom grouping options for this group.</p>
-			</blockquote>
-			
-			<h5>Options</h5>
+<h5>Parameters</h5>
 
-			<p>See <a href="#grid-method-setGrouping">grid.setGrouping()</a> for information about grouping options.</p>
+<blockquote>
+	<p><code class="pill strong">column_id</code> <code class="pill green">(string)</code> - Id of the column by which to group by.</p>
+	<p><code class="pill strong">options</code> <code class="pill green">(object)</code> - (Optional) Custom grouping options for this group.</p>
+</blockquote>
 
-			<h5>Returns</h5>
+<h5>Options</h5>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<p>See <a href="#grid-method-setGrouping">grid.setGrouping()</a> for information about grouping options.</p>
 
-			<h5>Example</h5>
+<h5>Returns</h5>
+
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">// Group data by the values in the 2nd column
 new DobyGrid(...).addGrouping('my_second_column');
 
 // Group data by the values in the 2nd column, but automatically expand the group
 new DobyGrid(...).addGrouping('my_second_column', {
-    collapsed: false
+	collapsed: false
 });</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

@@ -1,44 +1,36 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>add(<span class="param">models</span>, <span class="param">options</span>)</h2>
+<p>Add a model (or an array of models) to the grid collection. Pass <code>{at: index}</code> as an option to splice the model into the collection at the specified index. If you're adding models to the collection that are already in the collection, they'll be ignored, unless you pass <code>{merge: true}</code>, in which case their attributes will be merged into the corresponding models.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>add(<span class="param">models</span>, <span class="param">options</span>)</h2>
-			<p>Add a model (or an array of models) to the grid collection. Pass <code>{at: index}</code> as an option to splice the model into the collection at the specified index. If you're adding models to the collection that are already in the collection, they'll be ignored, unless you pass <code>{merge: true}</code>, in which case their attributes will be merged into the corresponding models.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">models</code> <code class="pill green">(object), (array)</code> - Data model(s) to insert</p>
-				<p><code class="pill strong">options</code> <code class="pill green">(object)</code> - (Optional) Additional options for handling the insert.</p>
-			</blockquote>
-			
-			<h5>Options</h5>
+<blockquote>
+	<p><code class="pill strong">models</code> <code class="pill green">(object), (array)</code> - Data model(s) to insert</p>
+	<p><code class="pill strong">options</code> <code class="pill green">(object)</code> - (Optional) Additional options for handling the insert.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">at</code> <code class="pill green">(integer)</code> - The index at which to splice the model(s) into the collection.</p>
-				<p><code class="pill strong">forced</code> <code class="pill green">(boolean)</code> - If enabled, will force a grid refresh regardless of how frequently add is called. Otherwise, will debounce it for 10ms. Default is false.</p>
-				<p><code class="pill strong">merge</code> <code class="pill green">(boolean)</code> - Check to see if models with the given id already exist. If they do - merge their data.</p>
-				<p><code class="pill strong">silent</code> <code class="pill green">(boolean)</code> - If true, will not auto-reload the grid - only add the items to the internal collection.</p>
-			</blockquote>
+<h5>Options</h5>
 
-			<h5>Returns</h5>
+<blockquote>
+	<p><code class="pill strong">at</code> <code class="pill green">(integer)</code> - The index at which to splice the model(s) into the collection.</p>
+	<p><code class="pill strong">forced</code> <code class="pill green">(boolean)</code> - If enabled, will force a grid refresh regardless of how frequently add is called. Otherwise, will debounce it for 10ms. Default is false.</p>
+	<p><code class="pill strong">merge</code> <code class="pill green">(boolean)</code> - Check to see if models with the given id already exist. If they do - merge their data.</p>
+	<p><code class="pill strong">silent</code> <code class="pill green">(boolean)</code> - If true, will not auto-reload the grid - only add the items to the internal collection.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
+<h5>Returns</h5>
 
-			<h5>Example</h5>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">// Insert a row at position 5
 new DobyGrid(...).add({...}, {at: 4})
 
 // Insert two new rows to the end of the grid
 new DobyGrid(...).add([{...}, {...}])</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

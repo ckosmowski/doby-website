@@ -1,22 +1,20 @@
 define([
 	'underscore',
-	'text!pages/grid-method-selectCells.html',
-	'text!pages/grid-sidebar.html'
-], function (_, template, sidebar) {
+	'text!templates/grid-docs.html',
+	'text!pages/grid-method-selectCells.html'
+], function (_, template, page) {
 	"use strict";
 	
 	return Backbone.DobyView.extend({
 		
 		initialize: function () {
 			var html = _.template(template, {
-				sidebar: sidebar
+				page: page
 			});
 			
 			this.$el.append(html);
 		},
 		
-		render: function () {
-			
-		}
+		render: function () {}
 	});
 });

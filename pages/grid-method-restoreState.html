@@ -1,34 +1,26 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>restoreState(<span class="param">state</span>)</h2>
+<p>Restores the state of grid's user customizations. Expect an object which was returned from <a href="#grid-method-getState"><code class="pill">grid.getState()</code></a>.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>restoreState(<span class="param">state</span>)</h2>
-			<p>Restores the state of grid's user customizations. Expect an object which was returned from <a href="#grid-method-getState"><code class="pill">grid.getState()</code></a>.</p>
+<p>If possible, you should call this method before calling <a href="#grid-method-appendTo"><code class="pill">grid.appendTo()</code></a> to prevent unnecessary redraws.</p>
 
-			<p>If possible, you should call this method before calling <a href="#grid-method-appendTo"><code class="pill">grid.appendTo()</code></a> to prevent unnecessary redraws.</p>
+<p>You can listen to the <a href="#grid-events-statechage"><code class="pill">statechange</code></a> event to know when a user customization has been done.</p>
 
-			<p>You can listen to the <a href="#grid-events-statechage"><code class="pill">statechange</code></a> event to know when a user customization has been done.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">state</code> <code class="pill green">(object)</code> - The object of settings from <a href="#grid-method-getState"><code class="pill">grid.getState()</code></a>.</p>
-			</blockquote>
-			
-			<h5>Returns</h5>
+<blockquote>
+	<p><code class="pill strong">state</code> <code class="pill green">(object)</code> - The object of settings from <a href="#grid-method-getState"><code class="pill">grid.getState()</code></a>.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
-			</blockquote>
-			
-			<h5>Example</h5>
+<h5>Returns</h5>
+
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">new DobyGrid(...).restoreState({...}).appendTo(document.body);</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

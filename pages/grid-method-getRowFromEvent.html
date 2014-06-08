@@ -1,34 +1,26 @@
-<div class="row">
-	{{sidebar}}
+<h2><span class="pref">grid.</span>getRowFromEvent(<span class="param">event</span>)</h2>
+<p>This helper function allows you to fetch a given row model from a Javascript event object. This is useful when creating custom events outside the grid's event system.</p>
 
-	<div class="large-9 medium-8 columns">
-		<div class="columns">
-			<h2><span class="pref">grid.</span>getRowFromEvent(<span class="param">event</span>)</h2>
-			<p>This helper function allows you to fetch a given row model from a Javascript event object. This is useful when creating custom events outside the grid's event system.</p>
-			
-			<h5>Parameters</h5>
+<h5>Parameters</h5>
 
-			<blockquote>
-				<p><code class="pill strong">event</code> <code class="pill green">(object)</code> - Javascript event object.</p>
-			</blockquote>
-			
-			<h5>Returns</h5>
+<blockquote>
+	<p><code class="pill strong">event</code> <code class="pill green">(object)</code> - Javascript event object.</p>
+</blockquote>
 
-			<blockquote>
-				<p><code class="pill strong">(object)</code> - A data model object.</p>
-			</blockquote>
+<h5>Returns</h5>
 
-			<h5>Example</h5>
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A data model object.</p>
+</blockquote>
+
+<h5>Example</h5>
 
 <pre><code class="language-javascript">var grid = new DobyGrid(...);
 
 $my_row.on('click', function (event) {
     var row = grid.getRowByEvent(event);
 });</code></pre>
-			
-			<h5>Demo</h5>
-			
-			<div id="demo-grid"></div>
-		</div>
-	</div>
-</div>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

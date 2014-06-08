@@ -1,15 +1,16 @@
 define([
 	'underscore',
+	'text!templates/grid-docs.html',
 	'text!pages/grid-method-appendTo.html',
-	'text!pages/grid-sidebar.html'
-], function (_, template, sidebar) {
+	'dobygrid'
+], function (_, template, page, DobyGrid) {
 	"use strict";
 	
 	return Backbone.DobyView.extend({
 		
 		initialize: function () {
 			var html = _.template(template, {
-				sidebar: sidebar
+				page: page
 			});
 			
 			this.$el.append(html);
