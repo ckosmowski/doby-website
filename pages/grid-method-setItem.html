@@ -1,0 +1,51 @@
+<div class="row">
+	{{sidebar}}
+
+	<div class="large-9 medium-8 columns">
+		<div class="columns">
+			<h2><span class="pref">grid.</span>setItem(<span class="param">item_id</span>, <span class="param">attributes</span>)</h2>
+			<p>Replaces an item in the grid with new data.</p>
+
+			<p>If your grid is using a Backbone.Collection as your data set, the <code class="pill strong">attributes</code> parameter must be a valid Backbone.Model object.</p>
+
+			<h5>Parameters</h5>
+
+			<blockquote>
+				<p><code class="pill strong">item_id</code> <code class="pill green">(string)</code> - The 'id' of the item you wish to update.</p>
+				<p><code class="pill strong">attributes</code> <code class="pill green">(object)</code> - A full data item to replace the existing item with, or a Backbone.Model object.</p>
+			</blockquote>
+			
+			<h5>Returns</h5>
+
+			<blockquote>
+				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+			</blockquote>
+
+			<h5>Example</h5>
+
+<pre><code class="language-javascript">// Updating a simple data set
+new DobyGrid({
+    data: {
+        id: 123,
+        data: {
+            name: 'bob'
+        }
+    }
+}).setItem(123, {
+    id: 123,
+    data: {
+        name: 'steve'
+    }
+});
+
+// Updating a Backbone.Collection data set
+new DobyGrid({
+    data: new Backbone.Collection({id: 1, name: 'bob'})
+}).setItem(123, new Model({name: 'steve'});</code></pre>
+			
+			<h5>Demo</h5>
+			
+			<div id="demo-grid"></div>
+		</div>
+	</div>
+</div>

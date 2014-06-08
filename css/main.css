@@ -40,8 +40,57 @@ body, h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-/* Code */
+/* jQuery.resizable */
 
+.ui-resizable {
+	position: relative;
+}
+
+.ui-resizable-handle {
+	background: rgba(255,200,200,0.6);
+	display: block;
+	font-size: 0.1px;
+	position: absolute;
+}
+
+.ui-resizable-e {
+	cursor: e-resize;
+	height: 100%;
+	right: -5px;
+	top: 0;
+	width: 7px;
+}
+
+.ui-resizable-s {
+	bottom: -5px;
+	cursor: s-resize;
+	height: 7px;
+	left: 0;
+	width: 100%;
+}
+
+.ui-resizable-se {
+	bottom: 1px;
+	cursor: se-resize;
+	height: 12px;
+	right: 1px;
+	width: 12px;
+}
+
+.ui-icon {
+	height: 16px;
+	width: 16px;
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+	background-image: url(http://code.jquery.com/ui/1.10.4/themes/smoothness/images/ui-icons_222222_256x240.png);
+}
+
+.ui-icon-gripsmall-diagonal-se {
+	background-position: -64px -224px;
+}
+
+/* Code */
 
 pre:before, pre:after {
     content: " ";
@@ -270,6 +319,12 @@ code.pill {
 	padding: 0 6px 2px;
 	text-shadow: #FFF 0 1px 0;
 	vertical-align: 1px;
+}
+
+code.green {
+	background: linear-gradient(to bottom, #F7F7F7, #EEFFEE);
+	border-color: #1F9A32;
+	color: #1F9A32;
 }
 
 code.strong {

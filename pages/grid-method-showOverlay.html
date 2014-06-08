@@ -1,0 +1,39 @@
+<div class="row">
+	{{sidebar}}
+
+	<div class="large-9 medium-8 columns">
+		<div class="columns">
+			<h2><span class="pref">grid.</span>showOverlay(<span class="param">options</span>)</h2>
+			<p>Hides all the rows of the grid and displays a single overlay element instead.</p>
+
+			<h5>Parameters</h5>
+
+			<blockquote>
+				<p><code class="pill strong">options</code> <code class="pill green">(object)</code> - An object of additional options for the overlay.</p>
+			</blockquote>
+			
+			<h5>Options</h5>
+			
+			<blockquote>
+				<p><code class="pill strong">class</code> <code class="pill green">(string)</code> - Custom CSS class to use for the overlay.</p>
+				<p><code class="pill strong">html</code> <code class="pill green">(string)</code> - Custom HTML to insert into the overlay.</p>
+			</blockquote>
+			
+			<h5>Returns</h5>
+
+			<blockquote>
+				<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+			</blockquote>
+
+			<h5>Example</h5>
+
+<pre><code class="language-javascript">new DobyGrid(...).showOverlay({
+    html: "There was an error loading the grid"
+});</code></pre>
+			
+			<h5>Demo</h5>
+			
+			<div id="demo-grid"></div>
+		</div>
+	</div>
+</div>
