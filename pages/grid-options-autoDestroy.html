@@ -1,0 +1,17 @@
+<h2><span class="pref">options.</span>autoDestroy</h2>
+
+<p>This option controls whether or not the grid should cleanly destroy itself when it detects that the grid has been removed from the DOM. It adds a little extra overhead, but ensures that memory is freed up automatically.</p>
+
+<p>With this option enabled you will not be able to insert the grid into an invisible or hidden element.</p>
+
+<p>If you disable this option, make sure to manually call <a href="#grid-method-destroy"><code class="pill">grid.destroy()</code></a> when you want to remove the grid.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(boolean)</code>: Default <code class="pill">true</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{autoDestroy: false}</code></pre>

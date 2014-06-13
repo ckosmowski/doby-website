@@ -1,0 +1,34 @@
+<h2><span class="pref">options.</span>clipboard</h2>
+
+<p>This option determines how the grid data will be sent to the clipboard when cells are selected and Ctrl/Command + C is pressed. Your available options are:</p>
+
+<blockquote>
+	<ul class="no-bullet">
+		<li><code class="pill">csv</code> - Data will be stored as a comma separated value string</li>
+		<li><code class="pill">json</code> - Data will be stored as a JSON array</li>
+	</ul>
+</blockquote>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(string)</code>: Default <code class="pill">csv</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{clipboard: 'json'}</code></pre>
+
+<h5>Demo</h5>
+
+<p>Press "Select All", or click and drag inside the grid to select a range of cells. Then press Ctrl/Command + C to copy the selection. Then Paste the selection into a text editor of your choice using Ctrl/Command + V.</p>
+
+<label>
+	<strong>Set option value:</strong>
+	<select id="option-value">
+		<option selected="selected">csv</option>
+		<option>json</option>
+	</select>
+</label>
+
+<div id="demo-grid"></div>

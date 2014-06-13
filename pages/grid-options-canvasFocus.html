@@ -1,0 +1,35 @@
+<h2><span class="pref">options.</span>canvasFocus</h2>
+
+<p>In order to use <a href="#grid-options-keyboardNavigation"><code class="pill">options.keyboardNavigation</code></a>, the grid must steal focus when the mouse enters the grid canvas. However, in some cases, you want to ensure focus stays on another element on the page. This option lets you control that focusing behavior.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(boolean)</code>: Default <code class="pill">true</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{canvasFocus: false}</code></pre>
+
+<h5>Demo</h5>
+
+<div class="row">
+	<div class="columns large-6">
+		<label>
+			<strong>Set option value:</strong>
+			<select id="option-value">
+				<option selected="selected">true</option>
+				<option>false</option>
+			</select>
+		</label>
+	</div>
+	<div class="columns large-6">
+		<label>
+			<strong>Current Focus:</strong>
+			<div class="current-focus"></div>
+		</label>
+	</div>
+</div>
+
+<div id="demo-grid"></div>

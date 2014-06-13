@@ -3,6 +3,18 @@
 
 <p>You can listen to the <a href="#grid-events-statechage"><code class="pill">statechange</code></a> event to know when any user customizations have been done.</p>
 
+<h5>Parameters</h5>
+
+<blockquote>
+	<p><code class="pill strong">options</code> <code class="pill green">(object)</code> - (Optional) Additional options for getting the state.</p>
+</blockquote>
+
+<h5>Options</h5>
+
+<blockquote>
+	<p><code class="pill strong">column_properties</code> <code class="pill green">(array)</code> - By default, the grid will only store the 'id' and the 'width' properties of a column as those are the only two properties which are configurable from the front-end by default. However, in some cases, you may want to store additional column properties. This option allows you specify a list of additional properties to get from the state.</p>
+</blockquote>
+
 <h5>Returns</h5>
 
 <blockquote>
@@ -11,7 +23,12 @@
 
 <h5>Example</h5>
 
-<pre><code class="language-javascript">new DobyGrid(...).getState();</code></pre>
+<pre><code class="language-javascript">new DobyGrid(...).getState();
+
+// Get the state of some additional column properties
+new DobyGrid(...).getState({
+	column_properties: ['name', 'my_custom_property']
+});</code></pre>
 
 <h5>Demo</h5>
 

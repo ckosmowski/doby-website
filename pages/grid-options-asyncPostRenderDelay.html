@@ -1,0 +1,27 @@
+<h2><span class="pref">options.</span>asyncPostRenderDelay</h2>
+
+<p>When using the <a href="#grid-options-columns-postprocess"><code class="pill">options.columns.postprocess</code></a> column option, this option determines the delay (in milliseconds) which to wait before attempting to post-process grid cells. You may need to increase this if you need to support slower computers or older browsers, otherwise leave it alone.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(integer)</code>: Default <code class="pill">25</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{asyncPostRenderDelay: 100}</code></pre>
+
+<h5>Demo</h5>
+
+<label>
+	<strong>Set option value:</strong>
+	<select id="option-value">
+		<option selected="selected">100</option>
+		<option>200</option>
+		<option>500</option>
+		<option>1000</option>
+	</select>
+</label>
+
+<div id="demo-grid"></div>
