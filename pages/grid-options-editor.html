@@ -1,0 +1,19 @@
+<h2><span class="pref">options.</span>editor</h2>
+
+<p>When editing cells, this will be the custom editor function to use as the default. The <a href="#grid-options-editable"><code class="pill">options.editable</code></a> option must be enabled for this to go into affect. If a specific column has another editor specified via the "Column Options" section on the left, this option will be ignored for that column.
+
+For additional documentation on editors see: <a href="#grid-editors">Editors</a>.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(function)</code>: Default <code class="pill">false</code>.</p>
+</blockquote>
+
+<h5>Examples</h5>
+
+<pre><code class="language-javascript">{
+    editor: function (options) {
+        ...
+    }
+}</code></pre>

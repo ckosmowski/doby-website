@@ -1,0 +1,48 @@
+<h2><span class="pref">options.</span>data</h2>
+
+<p>This option holds the main data set or method for fetching a remote data set. The data can be either:</p>
+
+<ul>
+	<li>an array of objects</li>
+	<li>a Backbone.Collection object</li>
+	<li>a function method for remote data fetching</li>
+</ul>
+
+<p>If you wish to use a simple list of data objects, see the "Data Options" section on the left for more info.</p>
+
+<p>For more information on using remote data sources see <a href="#grid-remote-data">Remote Data</a>.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(array), (object), (function)</code>: Default <code class="pill">[]</code>.</p>
+</blockquote>
+
+<h5>Examples</h5>
+
+<pre><code class="language-javascript">// Simple data array
+{
+    data: [{
+        data: {
+            id: 1,
+            name: "Magical Item #1"
+        }
+    }, {
+        data: {
+            id: 2,
+            name: "Magical Item #2"
+        }
+    }]
+}</code></pre>
+
+<pre><code class="language-javascript">// Remote data fetching function
+{
+    data: function() {
+        // See "Remote Data" page for more info
+    }
+}</code></pre>
+
+<pre><code class="language-javascript">// Backbone Collection data set
+{
+    data: new Backbone.Collection()
+}</code></pre>

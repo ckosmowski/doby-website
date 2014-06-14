@@ -1,0 +1,36 @@
+<h2><span class="pref">options.</span>contextMenu</h2>
+
+<p>If enabled, will display a custom context menu for grouping, sorting, and editing other column settings. This option determines where the context menu will be toggled. Your choices are:</p>
+
+<blockquote>
+	<ul class="no-bullet">
+		<li><code class="pill">all</code> - The context menu will appear when anything on the grid is right-clicked</li>
+		<li><code class="pill">header</code> - The context menu will appear when the grid header is right-clicked</li>
+		<li><code class="pill">false</code> - The context menu will be disabled</li>
+	</ul>
+</blockquote>
+
+<p><strong>Note:</strong> This value cannot be toggled via <a href="#grid-method-setOptions"><code class="pill">grid.setOptions()</code></a>. It must be set at initialization time.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(string), (boolean)</code>: Default <code class="pill">all</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{contextMenu: 'header'}</code></pre>
+
+<h5>Demo</h5>
+
+<label>
+	<strong>Set option value:</strong>
+	<select id="option-value">
+		<option value="all" selected="selected">'all'</option>
+		<option value="header">'header'</option>
+		<option value="false">false</option>
+	</select>
+</label>
+
+<div id="demo-grid"></div>
