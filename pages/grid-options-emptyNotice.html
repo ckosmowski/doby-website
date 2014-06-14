@@ -1,0 +1,29 @@
+<h2><span class="pref">options.</span>emptyNotice</h2>
+
+<p>Displays a "No Results Found" message when no data is available to be rendered (ie. the data set is empty). This is recommended if you're using a remote data source or if you are making use of the filtering options. Otherwise the grid will suddenly become empty with no user feedback.</p>
+
+<p>You can use "true" to display a default text message, or a function that returns an HTML string to display a custom overlay. The empty notice is rendered in an overlay, just like <a href="#grid-method-setOverlay"><code class="pill">grid.setOverlay()</code></a>.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(boolean), (string)</code>: Default <code class="pill">true</code>.</p>
+</blockquote>
+
+<h5>Examples</h5>
+
+<pre><code class="language-javascript">// Disable empty notices
+{
+    emptyNotice: false
+}
+
+// Custom empty notice
+{
+    emptyNotice: function () {
+        return "<span>Custom message</span>";
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

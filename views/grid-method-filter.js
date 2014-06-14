@@ -8,8 +8,10 @@ define([
 	
 	return Backbone.DobyView.extend({
 		
-		events: {
-			"keyup #grid-filter-input":	"filter"	
+		events: function () {
+			return _.extend({}, Backbone.DobyView.prototype.events, {
+				"keyup #grid-filter-input": "filter"
+			});
 		},
 		
 		initialize: function () {

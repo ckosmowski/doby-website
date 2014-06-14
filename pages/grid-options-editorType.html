@@ -1,0 +1,32 @@
+<h2><span class="pref">options.</span>editorType</h2>
+
+<p>Determines what cells are affected when editing values. Your choices are:</p>
+
+<blockquote>
+	<ul class="no-bullet">
+		<li><code class="pill">active</code> - The editor will only edit the active cell.</li>
+		<li><code class="pill">selection</code> - The editor will edit all selected cells.</li>
+	</ul>
+</blockquote>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(string)</code>: Default <code class="pill">selection</code>.</p>
+</blockquote>
+
+<h5>Examples</h5>
+
+<pre><code class="language-javascript">{editorType: 'active'}</code></pre>
+
+<h5>Demo</h5>
+
+<label>
+	<strong>Set option value:</strong>
+	<select id="option-value">
+		<option value="selection" selected="selected">selection</option>
+		<option value="active">active</option>
+	</select>
+</label>
+
+<div id="demo-grid"></div>

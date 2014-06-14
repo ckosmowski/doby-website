@@ -47,7 +47,6 @@ define([], function () {
 			
 			className: 'page',
 			
-			
 			/**
 			 * Filters the documentation sidebar when users type into the "Search Docs" input
 			 * @method docSearch

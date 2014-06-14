@@ -16,8 +16,6 @@ define([
 			this.$el.append(html);
 		},
 		
-		render: function () {
-			
-		}
+		render: function () {}
 	});
 });

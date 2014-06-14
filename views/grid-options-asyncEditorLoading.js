@@ -8,8 +8,10 @@ define([
 	
 	return Backbone.DobyView.extend({
 		
-		events: {
-			"change #option-value":		"changeOption"
+		events: function () {
+			return _.extend({}, Backbone.DobyView.prototype.events, {
+				"change #option-value":		"changeOption"
+			});
 		},
 		
 		initialize: function () {

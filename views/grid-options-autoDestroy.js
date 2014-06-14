@@ -7,10 +7,6 @@ define([
 	
 	return Backbone.DobyView.extend({
 		
-		events: {
-			"change #option-value":		"changeOption"
-		},
-		
 		initialize: function () {
 			var html = _.template(template, {
 				page: page

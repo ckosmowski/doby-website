@@ -8,8 +8,10 @@ define([
 	
 	return Backbone.DobyView.extend({
 		
-		events: {
-			"click .button": "restore"
+		events: function () {
+			return _.extend({}, Backbone.DobyView.prototype.events, {
+				"click .button": "restore"
+			});
 		},
 		
 		initialize: function () {

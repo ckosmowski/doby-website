@@ -1,0 +1,52 @@
+<h2><span class="pref">options.</span>formatter</h2>
+
+<p>Default function to use for all cell formatting. If a specific column has another formatter specified via the "Column Options" on the left, this option will be ignored.</p>
+
+<p>The formatter takes in the following arguments:</p>
+
+<blockquote>
+	<p><code class="pill strong">row</code> <code class="pill green">(integer)</code> - Index of the row when the cell is located.</p>
+	<p><code class="pill strong">cell</code> <code class="pill green">(integer)</code> - Index of the cell in the specified row.</p>
+	<p><code class="pill strong">value</code> <code class="pill green">(string)</code> - The value of this cell from the data object for this row.</p>
+	<p><code class="pill strong">columnDef</code> <code class="pill green">(object)</code> - The column definition object for the given column.</p>
+	<p><code class="pill strong">data</code> <code class="pill green">(object)</code> - The full data object for the given cell.</p>
+</blockquote>
+
+<p>The formatter function will be bound to the grid instance, so you can reference the grid via <code class="pill">this</code>.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(function)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Examples</h5>
+
+<pre><code class="language-javascript">// Simple formatter that renders the value of the cell directly
+{
+    formatter: function (row, cell, value, columnDef, data) {
+        return value;
+    }
+}
+
+// Cleaner formatter which strips out HTML characters and handles
+// empty values nicely (this is similar to what Doby Grid will do by default
+// if you don't specify any formatter at all)
+{
+    formatter: function (row, cell, value, columnDef, data) {
+        if (value === undefined || value === null) {
+            return "";
+        }
+
+        return (value + "")
+            .replace(/&/g, "&amp;amp;")
+            .replace(/&lt;/g, "&amp;lt;")
+            .replace(/&gt;/g, "&amp;gt;");
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<p>In this demo the formatter, completely ignores the data set and always renders cells with the value "X".</p>
+
+<div id="demo-grid"></div>

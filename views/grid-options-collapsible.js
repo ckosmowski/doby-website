@@ -8,8 +8,10 @@ define([
 	
 	return Backbone.DobyView.extend({
 		
-		events: {
-			"change #option-value":		"changeOption"
+		events: function () {
+			return _.extend({}, Backbone.DobyView.prototype.events, {
+				"change #option-value":		"changeOption"
+			});
 		},
 		
 		initialize: function () {
@@ -74,12 +76,7 @@ define([
 				rowHeight: 35
 			})
 				.addGrouping('age', {collapsed: false})
-				.appendTo('#demo-grid')
-				.on('click', function (event) {
-					if ($(event.target).hasClass('button')) {
-						this.selectCells(0, 0, 3, 2);
-					}
-				});
+				.appendTo('#demo-grid');
 		},
 		
 		
