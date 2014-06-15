@@ -1,0 +1,63 @@
+<h2><span class="pref">options.</span>menuExtensions</h2>
+
+<p>This option allows you to add additional items to the grid's context menu. The option accepts a function which is expected to return an array of objects with the following supported attributes.</p>
+
+<blockquote>
+	<ul class="no-bullet">
+		<li><code class="pill strong">divider</code> <code class="pill green">(boolean)</code> - If true, this menu item will be a non-clickable divider line.</li>
+		<li><code class="pill strong">enabled</code> <code class="pill green">(boolean)</code> - If true, this menu item will be visible.</li>
+		<li><code class="pill strong">fn</code> <code class="pill green">(function)</code> - The function that will be executed when this menu item is clicked. More info below.</li>
+		<li><code class="pill strong">icon</code> <code class="pill green">(string)</code> - Optional icon to display at the front of the item. Can be an img tag or a custom bit of HTML code.</li>
+		<li><code class="pill strong">menu</code> <code class="pill green">(array)</code> - An array of submenu items.</li>
+		<li><code class="pill strong">name</code> <code class="pill green">(string)</code> - This is the text that will be displayed to the user for this menu item.</li>
+		<li><code class="pill strong">title</code> <code class="pill green">(boolean)</code> - If true, this menu item will be a non-clickable section title.</li>
+		<li><code class="pill strong">value</code> <code class="pill green">(boolean)</code> - If true, this menu item will display a checkmark icon.</li>
+	</ul>
+</blockquote>
+
+<p>The function you provide will be supplied with the following arguments:</p>
+
+<blockquote>
+	<ul class="no-bullet">
+		<li><code class="pill strong">event</code> <code class="pill green">(object)</code> - The Javascript event object from the click event.</li>
+		<li><code class="pill strong">grid</code> <code class="pill green">(object)</code> - The current instance of the Doby Grid.</li>
+		<li><code class="pill strong">args</code> <code class="pill green">(object)</code> - Various information about the area in which the user initiated the menu (with row, cell and column information).</li>
+	</ul>
+</blockquote>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(function)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{
+    menuExtensions: function (event, grid, args) {
+        return [{
+            icon: '<img src="myicon.png" />',
+            name: "Menu Item",
+            menu: [{
+                name: "Submenu Item",
+                fn: function (event) {
+                    // Perform some action here
+                }
+            }]
+        }, {
+            divider: true
+        }, {
+            name: "Toggle Button",
+            value: your_option,
+            fn: function (event) {
+                your_option = !your_option;
+            }
+        }]
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<p>Right-click anywhere on the grid.</p>
+
+<div id="demo-grid"></div>
