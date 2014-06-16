@@ -1,0 +1,27 @@
+<h2><span class="pref">options.</span>resizeCells</h2>
+
+<p>If enabled, when resizing columns via mouse drag and drop, will resize the cells of all column rows. Otherwise will only resize the headers until you stop dragging. The <a href="#grid-options-resizableColumns"><code class="pill">options.resizableColumns</code></a> option must be enabled for this to work.</p>
+
+<p>This option is disabled by default because on large grids, the resizing of cells is choppy and slow. If you're working with smaller grids - you may want to enable this for a better user experience.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(boolean)</code>: Default <code class="pill">false</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{resizeCells: true}</code></pre>
+
+<h5>Demo</h5>
+
+<label>
+	<strong>Set option value:</strong>
+	<select id="option-value">
+		<option value="true">true</option>
+		<option value="false" selected="selected">false</option>
+	</select>
+</label>
+
+<div id="demo-grid"></div>

@@ -1,7 +1,7 @@
 define([
 	'underscore',
 	'text!templates/grid-docs.html',
-	'text!pages/grid-options-reorderable.html',
+	'text!pages/grid-options-resizeCells.html',
 	'dobygrid'
 ], function (_, template, page, DobyGrid) {
 	"use strict";
@@ -22,9 +22,7 @@ define([
 			this.$el.append(html);
 		},
 		
-		render: function (value) {
-			if (this.grid) this.grid.destroy();
-			
+		render: function () {
 			var columns = [{
 				id: 'id',
 				field: 'id',
@@ -74,8 +72,7 @@ define([
 						name: "Robert",
 						age: 30
 					}
-				}],
-				reorderable: value
+				}]
 			}).appendTo('#demo-grid');
 		},
 		
@@ -85,7 +82,7 @@ define([
 			var value = $(event.currentTarget).val();
 			
 			// Set value
-			this.render(value == 'false' ? false : true);
+			this.grid.setOptions({resizeCells: value == 'false' ? false : true});
 		}
 	});
 });
