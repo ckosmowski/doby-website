@@ -1,0 +1,36 @@
+<h2><span class="pref">options.</span>tooltipType</h2>
+
+<p>The option handles the rendering style of tooltips as defined in the <a href="#grid-options-columns-tooltip"><code class="pill">options.columns.tooltip</code></a> option.</p>
+
+<p>Your choices are:</p>
+
+<blockquote>
+	<ul class="no-bullet">
+		<li><code class="pill">title</code> - For a default "title" attribute on the DOM element.</li>
+		<li><code class="pill">popup</code> - For a custom popup using jQuery.</li>
+	</ul>
+</blockquote>
+
+<p><strong>Note:</strong> This option cannot be toggled via <a href="#grid-method-setOptions"><code class="pill">grid.setOptions()</code></a>. It must be set at initialization.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(string)</code>: Default <code class="pill">"popup"</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{tooltipType: "title"}</code></pre>
+
+<h5>Demo</h5>
+
+<label>
+	<strong>Set option value:</strong>
+	<select id="option-value">
+		<option value="popup" selected="selected">popup</option>
+		<option value="title">title</option>
+	</select>
+</label>
+
+<div id="demo-grid"></div>

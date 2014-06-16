@@ -1,0 +1,23 @@
+<h2><span class="pref">options.</span>scrollLoader</h2>
+
+<p>A function that will return an HTML string to display during virtual scrolling. By default, nothing will be displayed - which may be undesired. This allows you to display a loading spinner or message.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(function)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{
+    scrollLoader: function () {
+        return "<span>Loading...</span>";
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<p>Use the scrollbar to quickly scroll up and down to see the scrollLoader message.</p>
+
+<div id="demo-grid"></div>

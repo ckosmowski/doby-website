@@ -80,7 +80,6 @@ define([
 			}).appendTo('#demo-grid');
 		},
 		
-		
 		changeOption: function (event) {
 			// Get value
 			var value = $(event.currentTarget).val();
