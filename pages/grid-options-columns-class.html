@@ -1,0 +1,31 @@
+<h2><span class="pref">options.columns.</span>class</h2>
+
+<p>An additional CSS class name to add to every cell in this column. You can also pass in a function which returns a string.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(string), (function)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">// Simple class name definition
+{class: 'cell_in_my_column'}
+
+// Class definition via a function
+{
+    class: function (row, cell, value, columnDef, data) {
+        return data.my_condition ? "Yes" : "No";
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<style type="text/css">
+	.clsred {background: #FEE}
+	.clsblue {background: #EEF}
+	.clsgreen {background: #EFE}
+</style>
+
+<div id="demo-grid"></div>

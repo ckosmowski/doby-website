@@ -1,0 +1,80 @@
+<h2><span class="pref">options.columns.</span>aggregators</h2>
+
+<p>Defines a list of data aggregators for this column. Aggregators provide the ability to generate summaries and totals for a given column's data. A new row will be added to the bottom of the grid (and the bottom of each group) that displays an aggregate value of your choosing. See the Aggregators example for a preview of the result.</p>
+
+<p>An aggregator item is defined as a dictionary with the following params:</p>
+
+<blockquote>
+	<ul class="no-bullet">
+		<li><code class="pill string">active</code> <code class="pill green">(boolean)</code> - Determines whether or not this is the currently active aggregator for this column. Only one aggregator can be displayed at any given time. By default, the first aggregator will be enabled if none specified.</li>
+		<li><code class="pill string">fn</code> <code class="pill green">(function)</code> - This is the main aggregator function.</li>
+		<li><code class="pill string">name</code> <code class="pill green">(string)</code> - The name for this aggregator.</li>
+	</ul>
+</blockquote>
+
+<p>The main aggregator <code class="pill string">fn</code> function takes in the following argument:</p>
+
+<blockquote>
+	<ul class="no-bullet">
+		<li><code class="pill string">column</code> <code class="pill green">(object)</code> - This is the column definition object that you can use within your aggregator.</li>
+	</ul>
+</blockquote>
+
+<p>The main <code class="pill">aggregator</code> function must have two public functions: <code class="pill">process</code> and <code class="pill">formatter</code>. The <code class="pill">process</code> function takes in an 'item' object for each row in the grid. And the <code class="pill">formatter</code> function outputs the final HTML string that will be inserted into the cell of the aggregator totals row. An additional <code class="pill">exporter</code> function can be used if you want to have the aggregate values be copied and exported.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(array)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">// This is a simple sum aggregator
+{
+    aggregators: [{
+        name: "Total Summary",
+        description: "A simple aggregator for calculating the total of all values in this column",
+        fn: function (column) {
+            // exporter()
+            // This function will be called when the Aggregator cell value is being exported.
+            // 
+            // @return string
+            this.exporter = function () {
+                return (this.total || "");
+            };
+
+            // formatter()
+            // This function will be called when the Aggregator cell is being rendered.
+            // Should return a valid HTML string.
+            //
+            // @return string
+            this.formatter = function () {
+                return "<strong>" + this.total + "</strong>";
+            };
+
+            // process()
+            // This function will be called on each item row when processing the aggregator.
+            //
+            // @param   item    object      The row data item
+            //
+            this.process = function (item) {
+                this.total += (item.data[column.field] || 0);
+            };
+
+            // reset()
+            // This function will be called anytime the aggregator needs to be reset, like
+            // in the event of a filter being applied to the data set.
+            //
+            this.reset = function () {
+                this.total = 0;
+            };
+
+            return this;
+        }
+    }]
+}</code></pre>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

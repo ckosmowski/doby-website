@@ -1,0 +1,17 @@
+<h2><span class="pref">options.columns.</span>dataExtractor</h2>
+
+<p>A custom data extractor for this column. This option will override the <a href="#grid-options-dataExtractor"><code class="pill">options.dataExtractor</code></a> option for the given column.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(function)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{
+    dataExtractor: function(item, columnDef) {
+        return item._special_key;
+    }
+}</code></pre>

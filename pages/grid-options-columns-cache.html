@@ -1,0 +1,27 @@
+<h2><span class="pref">options.columns.</span>cache</h2>
+
+<p>When used in combination with the <a href="#grid-options-columns-postprocess"><code class="pill">options.columns.postprocess</code></a> option, enabling this option will build a cache of the rendered cells in this column and use that cache when re-rendering the grid view. This prevents constant processing of cells during scrolling and resizing.</p>
+
+<p>Depending on the complexity of your grid and cell data, this could quickly use up a lot of memory. Use at your own risk.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(boolean)</code>: Default <code class="pill">false</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{cache: true}</code></pre>
+
+<h5>Demo</h5>
+
+<label>
+	<strong>Set option value:</strong>
+	<select id="option-value">
+		<option value="true">true</option>
+		<option value="false" selected="selected">false</option>
+	</select>
+</label>
+
+<div id="demo-grid"></div>
