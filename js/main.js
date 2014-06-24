@@ -84,6 +84,12 @@ define([], function () {
 
 			load: function (page) {
 				page = page || 'home';
+				
+				if (page == 'home') {
+					$(document.body).addClass('home');
+				} else {
+					$(document.body).removeClass('home');
+				}
 
 				// Load page context
 				require([

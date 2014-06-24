@@ -1,10 +1,7 @@
 /* Foundation Tweaks */
 
-.label {
-	box-shadow: rgba(0,0,0,0.5) 0 0 1px;
-	margin: 0 0.25rem;
-	padding: 0.15rem 0.35rem 0.25rem;
-	vertical-align: 2px;
+button, .button {
+	border-radius: 3px;
 }
 
 /* Font */
@@ -143,39 +140,50 @@ h3 {font-size: 22px}
 .textcenter {text-align: center}
 
 header {
-	background-color: #164F67;
-	background-image: linear-gradient(to bottom, #258DB9, #1A607E);
+	background-color: #86A6D7;
+	background-image: url(../img/header.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	height: 100px
 }
 
-.stars {
-	background:
-		radial-gradient(#0E3444 15%, transparent 16%) 0 0,
-		radial-gradient(#0E3444 15%, transparent 16%) 8px 8px,
-		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-	background-color: #185771;
-	background-size: 16px 16px;
-	padding: 20px 0 26px;
+.home header {
+	height: 400px
 }
 
 header h1,
 header p {
 	color: #FFF;
 	margin: 0;
-	text-shadow: rgba(0,0,0,0.3) 2px 2px 0;
+	text-shadow: rgba(0,0,0,0.5) 2px 2px 0;
 }
 
-	header h1 a {
+.home header h1,
+.home header p {
+	text-align: center;
+}
+
+header h1 {margin-top: 8px}
+.home header h1 {margin-top: 120px}
+
+	header h1 a,
+	header h1 a:hover {
 		color: #FFF;
 	}
 
+	.home header h1 a {
+		font-size: 80px;	
+	}
+
 header p {
-	color: #EEE;
+	color: #FFF;
 	margin-top: -6px
 }
 
 #content {
-	margin: 40px 0 0;
+	margin: 40px 0;
 	min-height: calc(100% - 272px);
 }
 
@@ -226,7 +234,7 @@ footer li a {
 .copyright a {color: #888}
 .copyright a:hover {color: #DDD}
 
-/* Context */
+/* Content */
 
 .disabled {opacity: 0.5}
 
@@ -263,6 +271,21 @@ footer li a {
 				.sidebar .side-nav li a:hover strong {
 					color: #1cc7ff
 				}
+
+.module-box {
+	background: #FFF;
+	border-radius: 3px;
+	box-shadow: rgba(0,0,0,0.2) 1px 1px 1px;
+	padding-top: 12px
+}
+
+	.module-box .type {
+		color: #AAA;
+		margin-bottom: 10px
+	}
+
+	.module-box h3 {font-size: 20px}
+	.module-box p {font-size: 14px}
 
 /* Grid Page */
 

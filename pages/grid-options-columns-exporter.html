@@ -1,0 +1,25 @@
+<h2><span class="pref">options.columns.</span>exporter</h2>
+
+<p>Similar to the <a href="#grid-options-columns-formatter"><code class="pill">options.columns.formatter</code></a> option, this function allows you to define a special way for data to be exported for this column during any export operations (ie. <a href="#grid-method-export"><code class="pill">grid.export()</code></a>, or when cells are selected and sent to the clipboard).</p>
+
+<p>This is useful when you have an image or another graphical value inside you cell, but still want some meaningful value to be exported back to the user that isn't the default data field.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(function)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{
+    exporter: function (columnDef, data) {
+        return "My Special Value";
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<p>All the cells in the grid below will always export the value "test".</p>
+
+<div id="demo-grid"></div>
