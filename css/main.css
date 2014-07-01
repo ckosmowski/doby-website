@@ -146,11 +146,17 @@ header {
 	background-position: center top;
 	background-size: cover;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
-	height: 100px
+	height: 100px;
 }
 
 .home header {
 	height: 400px
+}
+
+.loaded header {
+	-webkit-transition: height 0.3s ease-out;
+	   -moz-transition: height 0.3s ease-out;
+	        transition: height 0.3s ease-out;
 }
 
 header h1,
@@ -285,7 +291,11 @@ footer li a {
 	}
 
 	.module-box h3 {font-size: 20px}
-	.module-box p {font-size: 14px}
+	
+	.module-box p {
+		color: #222;
+		font-size: 14px
+	}
 
 /* Grid Page */
 

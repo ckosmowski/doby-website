@@ -85,6 +85,9 @@ define([], function () {
 			load: function (page) {
 				page = page || 'home';
 				
+				// Scroll to top
+				document.body.scrollTop = 0;
+				
 				if (page == 'home') {
 					$(document.body).addClass('home');
 				} else {
@@ -95,6 +98,9 @@ define([], function () {
 				require([
 					'views/' + page
 				], function (PageView) {
+					
+					$(document.body).addClass('loaded');
+					
 					var showPage = function (immediate) {
 						// Load view
 						var view = new PageView({
@@ -103,9 +109,6 @@ define([], function () {
 						
 						// Insert into DOM
 						view.$el.appendTo('#content');
-						
-						// Scroll to top
-						view.$el[0].scrollTop = 0;
 
 						if (immediate) {
 							// If this is the first page loaded - show it immediately, don't fade in

@@ -1,7 +1,7 @@
 define([
 	'underscore',
 	'text!templates/grid-docs.html',
-	'text!pages/grid-options-columns-exporter.html',
+	'text!pages/grid-options-columns-focusable.html',
 	'dobygrid'
 ], function (_, template, page, DobyGrid) {
 	"use strict";
@@ -17,28 +17,26 @@ define([
 		},
 		
 		render: function () {
-			var exporter = function () {
-				return "test";
-			};
-			
 			var columns = [{
 				id: 'id',
 				field: 'id',
+				filterable: false,
 				name: 'ID',
-				removable: true,
-				exporter: exporter
+				removable: true
 			}, {
 				id: 'name',
 				field: 'name',
-				name: 'Name',
+				focusable: true,
+				name: 'Focusable Column',
 				removable: true,
-				exporter: exporter
+				width: 150
 			}, {
 				id: 'age',
 				field: 'age',
-				name: 'Age',
+				focusable: false,
+				name: 'Non-Focusable Column',
 				removable: true,
-				exporter: exporter
+				width: 150
 			}];
 			
 			this.grid = new DobyGrid({
@@ -71,7 +69,8 @@ define([
 						name: "Robert",
 						age: 30
 					}
-				}]
+				}],
+				quickFilter: true
 			}).appendTo('#demo-grid');
 		}
 	});

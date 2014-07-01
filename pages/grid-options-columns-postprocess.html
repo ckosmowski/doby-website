@@ -1,0 +1,62 @@
+<h2><span class="pref">options.columns.</span>postprocess</h2>
+
+<p>Function that will be called when after the grid cells have been rendered. This allows you to access the grid cell DOM if you need to render objects by reference to the DOM.</p>
+
+<p>Cells will be post-processed on each render, which is done during scrolling and navigating. This may cause some unwanted re-post-processing. If you want rendering to be cached after the first processing pass use the <a href="#grid-options-columns-cache"><code class="pill">options.columns.cache</code></a> option.</p>
+
+<p>This option is discouraged as it adds unwanted jitter to your grid and causes a delayed rendering of data.</p>
+
+<p>The function will get called on a timer as defined at the grid level via <a href="#grid-options-asyncPostRenderDelay"><code class="pill">options.asyncPostRenderDelay</code></a>. Depending on the speed of your grid's rendering - you may need to increase or decrease that value to see desired results.</p>
+
+<p>Be aware that the postprocessor will be executed for all rows in the grid, including non data rows that the grid itself generates (placeholder rows, alert rows, group header rows, aggregator rows, etc...). You may need to manually escape out of processing any such rows. You can do this by checking for the <code class="pill">data.data.__nonDataRow</code> attribute</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(function)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Function Parameters</h5>
+
+<blockquote>
+	<p><code class="pill strong">data</code> <code class="pill green">(object)</code> - This is the data object that gives you a reference to the data of the row currently being rendered, as well as the cell DOM.</p>
+	<p><code class="pill strong">callback</code> <code class="pill green">(function)</code> - This is a callback function that the grid expects to get fired after your post-processing is complete. You must call this function if you want to use the cache option for caching your results.</p>
+</blockquote>
+
+<h5>Data Parameters</h5>
+
+<p>The <code class="pill strong">data</code> parameter object will have the following keys available to you:</p>
+
+<blockquote>
+	<p><code class="pill strong">$cell</code> <code class="pill green">(object)</code> - The jQuery object DOM reference to the cell being processed.</p>
+	<p><code class="pill strong">column</code> <code class="pill green">(object)</code> - A reference to the column object relevant to this cell.</p>
+	<p><code class="pill strong">data</code> <code class="pill green">(object)</code> - The data object of the item for this cell.</p>
+	<p><code class="pill strong">grid</code> <code class="pill green">(object)</code> - A reference to the current grid instance.</p>
+	<p><code class="pill strong">rowIndex</code> <code class="pill green">(integer)</code> - The index of the row for this cell.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">// In this example, we want to preload an image before rendering it to the grid, and then fade it in nicely with jQuery
+{
+    postprocess: function(data, callback) {
+        var img = new Image();
+        img.src = 'my_little_pony.png';
+        img.onload = function () {
+            data.$cell.empty();
+            $(img)
+                .hide()
+                .appendTo(data.$cell)
+                .fadeIn(250, function () {
+                    callback();
+                });
+            }
+        };
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<p>In the demo grid below, cells will be colored red after a short delay. Try scrolling down to see the effect in action.</p>
+
+<div id="demo-grid"></div>

@@ -1,0 +1,25 @@
+<h2><span class="pref">options.columns.</span>formatter</h2>
+
+<p>Function to use for formatting the cells in this column. Overrides the defaults set in <a href="#grid-options-formatter"><code class="pill">options.formatter</code></a>.</p>
+
+<p>For additional documentation and instructions see: <a href="#grid-options-formatter"><code class="pill">options.formatter</code></a></p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(function)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{
+    formatter: function (row, cell, value, columnDef, data) {
+        return "My Special Value";
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<p>Try clicking on the cells in the Focusable Column vs. the Non-Focusable Column.</p>
+
+<div id="demo-grid"></div>

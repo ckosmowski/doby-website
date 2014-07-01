@@ -1,7 +1,7 @@
 define([
 	'underscore',
 	'text!templates/grid-docs.html',
-	'text!pages/grid-options-columns-exporter.html',
+	'text!pages/grid-options-columns-width.html',
 	'dobygrid'
 ], function (_, template, page, DobyGrid) {
 	"use strict";
@@ -17,28 +17,20 @@ define([
 		},
 		
 		render: function () {
-			var exporter = function () {
-				return "test";
-			};
-			
 			var columns = [{
 				id: 'id',
 				field: 'id',
-				name: 'ID',
-				removable: true,
-				exporter: exporter
+				name: 'ID'
 			}, {
 				id: 'name',
 				field: 'name',
-				name: 'Name',
-				removable: true,
-				exporter: exporter
+				name: '150px Width',
+				width: 150
 			}, {
 				id: 'age',
 				field: 'age',
-				name: 'Age',
-				removable: true,
-				exporter: exporter
+				name: '250px Width',
+				width: 250
 			}];
 			
 			this.grid = new DobyGrid({
@@ -71,7 +63,8 @@ define([
 						name: "Robert",
 						age: 30
 					}
-				}]
+				}],
+				quickFilter: true
 			}).appendTo('#demo-grid');
 		}
 	});

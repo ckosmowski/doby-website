@@ -1,7 +1,7 @@
 define([
 	'underscore',
 	'text!templates/grid-docs.html',
-	'text!pages/grid-options-columns-exporter.html',
+	'text!pages/grid-options-columns-formatter.html',
 	'dobygrid'
 ], function (_, template, page, DobyGrid) {
 	"use strict";
@@ -24,21 +24,21 @@ define([
 			var columns = [{
 				id: 'id',
 				field: 'id',
+				filterable: false,
 				name: 'ID',
-				removable: true,
-				exporter: exporter
+				removable: true
 			}, {
 				id: 'name',
 				field: 'name',
-				name: 'Name',
-				removable: true,
-				exporter: exporter
+				name: 'Name'
 			}, {
-				id: 'age',
-				field: 'age',
-				name: 'Age',
-				removable: true,
-				exporter: exporter
+				id: 'cost',
+				field: 'cost',
+				name: 'Formatted Cost',
+				formatter: function (row, cell, value) {
+					return "$" + value + ".00";
+				},
+				width: 180
 			}];
 			
 			this.grid = new DobyGrid({
@@ -47,31 +47,32 @@ define([
 					id: 1,
 					data: {
 						id: 1,
-						name: "John",
-						age: 20
+						name: "Plate",
+						cost: 20
 					}
 				}, {
 					id: 2,
 					data: {
 						id: 2,          
-						name: "Steve",
-						age: 20
+						name: "Fork",
+						cost: 20
 					}
 				}, {
 					id: 3,
 					data: {
 						id: 3,          
-						name: "Michael",
-						age: 21
+						name: "Cup",
+						cost: 21
 					}
 				}, {
 					id: 4,
 					data: {
 						id: 4,          
-						name: "Robert",
-						age: 30
+						name: "Spoon",
+						cost: 30
 					}
-				}]
+				}],
+				quickFilter: true
 			}).appendTo('#demo-grid');
 		}
 	});
