@@ -1,0 +1,34 @@
+<h2><span class="pref">options.data.</span>columns</h2>
+
+<p>A custom handler object for rendering columns within this row. The keys of the object can either be column index values or column "id" values depending on which works better in your situation. If you use the column's id value - then the definitions will move with the column even when the user changes the column order. If you use the column's index - then the column definitions will stick to the grid at that index.</p>
+
+<p>Column objects are keyed by the index of the column and may contain a special "colspan" property which allows you to specify the column span of this item. The "colspan" property accepts either a number for the colspan or a "*" string to span the full width of the grid.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(object)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">// This row will be rendered as a single column that spans the entire width of the grid
+columns: {
+    0: {
+        colspan: "*",
+        formatter: function (row, cell, value, columnDef, data) {
+            return "Full Width Row";
+        }
+    }
+}
+
+// This row will be have its 'id' column have a column span of 2 cells
+columns: {
+    'id': {
+        colspan: "2"
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

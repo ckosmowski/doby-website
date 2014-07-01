@@ -1,0 +1,151 @@
+<h2>Remote Data</h2>
+
+<p>Doby Grid fully supports the ability to fetch data from a remote server via an asynchronous call. This is done seamlessly without losing any features of the grid.</p>
+
+<p>When designing your remote data sets, it's important to remember that your server must return back a unique id value for every item.</p>
+
+<p>To make this happen you'll need to pass in a new function class as your <a href="#grid-options-data"><code class="pill">options.data</code></a> property. The class must contain the following functions and the following format:</p>editor. You can use this as a reference point for writing your own.</p>
+
+<h3>Sample Remote Data</h3>
+
+<pre><code class="language-javascript" style="max-height:none">data: function () {
+
+    // count()
+    // Via callback, should return an integer that represents the total number of data objects available on your server. This tells the grid how many rows of data to expect.
+    //
+    // Should return back a pointer to your jQuery AJAX object.
+    //
+    // @param   options     object      Fetch options
+    // @param   callback    function    Callback function
+    //
+    // The following options will be passed in:
+    //
+    // @opt     filters     array       Filter set currently applied to data
+    //
+    // @return object
+    this.count = function (options, callback) {
+        return $.ajax({
+            url: "your_server_here/count_function",
+            success: function (count) {
+                callback(count);
+            }
+        });
+    };
+
+    // fetch()
+    // Via callback, should return an array of data objects for the given options set.
+    //
+    // Should return back a pointer to your jQuery AJAX object.
+    //
+    // @param   options     object      Fetch options
+    // @param   callback    function    Callback function
+    //
+    // The following options will be passed in:
+    //
+    // @opt     columns     array       List of currently active column objects
+    // @opt     filters     array       Filter set currently applied to data
+    // @opt     limit       integer     The number of items needed
+    // @opt     offset      integer     On which row to start fetching
+    // @opt     order       array       A list of the current sort order objects
+    //
+    // @return object
+    this.fetch = function (options, callback) {
+        return $.ajax({
+            data: options,
+            url: "your_server_here/rest_api",
+            success: function (results) {
+                callback(results);
+            }
+        });
+    };
+
+    // fetchGroups()
+    // Via callback, should return the values for a given group request.
+    // Expecting results in the following format:
+    //
+    // [{
+    //      column_id: 'first_grouped_column',
+    //      groups: [{
+    //          count: 432,
+    //          value: 'A'
+    //      }, {
+    //          count: 192,
+    //          value: 'B'
+    //      }]
+    // }, {
+    //      column_id: 'second_grouped_column',
+    //      groups: [{
+    //          count: 12,
+    //          value: '1',
+    //          parent: 'A'
+    //      }, {
+    //          count: 14,
+    //          value: '2',
+    //          parent: 'A'
+    //      }]
+    // }]
+    //
+    // Where the 'column_id' value is the ID of the column which is being grouped by, the 'count' is the
+    // total number of items in that group, and the 'value' is the user-facing value of this group.
+    //
+    // It's also important to note that 'null' value groups are expected to be at the end of the groups
+    // array. Otherwise, the grid will not render the rows correctly.
+    //
+    // Should return back a pointer to your jQuery AJAX object.
+    //
+    // @param   options     object      Grouping options
+    // @param   callback    function    Callback function
+    //
+    // The following options will be passed in:
+    //
+    // @opt     filters     array       Filter set currently applied to data
+    // @opt     groups      array       A list of grouping objects currently enabled
+    // @opt     order       array       A list of the current sort order objects
+    //
+    // @return object
+    this.fetchGroups = function (options, callback) {
+        return $.ajax({
+            data: options,
+            url: "your_server_here/rest_api",
+            success: function (results) {
+                callback(results);
+            }
+        });
+    };
+
+    // onLoading()
+    // This function will be called when the grid begins processing a request. This is your chance
+    // to draw a progress bar or loading spinner.
+    //
+    this.onLoading = function () {
+        var loader = $('&lt;div class="myloader" style="background:rgba(0,0,0,0.2);position:absolute;top:30px;left:0;right:0;bottom:0;text-align:center;line-height:300px"&gt;Loading...&lt;/div&gt;')
+            .hide()
+            .appendTo(this.grid.$el)
+            .fadeIn(150);
+    };
+
+    // onLoaded()
+    // This function will be called when the grid stops processing a request.
+    //
+    this.onLoaded = function () {
+        this.grid.$el.children('.myloader')
+            .fadeOut(150, function () {
+                $(this).remove();
+            });
+    };
+}</code></pre>
+
+<h3>Remote Data with a Backbone Collection data set</h3>
+
+<p>You can combine the Remote Data object with your Backbone Collection object. To do this you'll need to create a special <code class="pill">DobyGridRemote</code> attribute in your Collection object with the same function methods described above.</p>
+
+<pre><code class="language-javascript" style="max-height:none">var YourCollection = new Backbone.Collection();
+YourCollection.DobyGridRemote = {
+    count: function () { ... },
+    fetch: function () { ... },
+    fetchGroups: function () { ... },
+    onLoading: function () { ... },
+    onLoaded: function () { ... }
+};
+
+new DobyGrid({data: YourCollection});</code></pre>

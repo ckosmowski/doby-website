@@ -1,0 +1,30 @@
+<h2><span class="pref">options.data.</span>class</h2>
+
+<p>A custom CSS class to apply to this row. You can also pass in a function which returns a string.</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(string), (function)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">// Simple class name definition
+{class: "my-css-class"}
+
+// Class definition via a function
+{
+    class: function (row, data) {
+        return data.my_condition ? "Yes" : "No";
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<style>
+.example-red div {background: #f2a8a8}
+.example-blue div {background: #a1b4ed}
+</style>
+
+<div id="demo-grid"></div>

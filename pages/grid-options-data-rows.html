@@ -1,0 +1,26 @@
+<h2><span class="pref">options.data.</span>rows</h2>
+
+<p>Specifies a custom row definition for this item. This allows you to render multiple rows for a single item.</p>
+
+<p>This is useful when you want to have a data item be represented with multiple rows. This is especially useful when you toggle the visibility of the second row via a button (ie. expand/collapse details).</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(object)</code>: Default <code class="pill">null</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">rows: {
+    0: {
+        height: 20,
+        formatter: function () {
+            return "Secondary Row";
+        }
+    }
+}</code></pre>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

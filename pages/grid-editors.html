@@ -1,0 +1,222 @@
+<h2>Editors</h2>
+
+<p>When it comes to editing data inside your grid, Doby Grid supports the use of custom editors but also comes with a very robust built-in editor that should handle anything you can throw at it. An editor is a class with a few build-in methods for getting, setting, and validating data.</p>
+
+<p>You can define an editor either at the global grid level via <a href="#grid-options-editor"><code class="pill">options.editor</code></a> or at the column level via <a href="#grid-options-columns-editor"><code class="pill">options.columns.editor</code></a> Column Option. Below is an annotated view of a very simple default editor. You can use this as a reference point for writing your own.</p>
+
+<h3>Simple Editor</h3>
+
+<pre><code class="language-javascript" style="max-height:none">// editor()
+// This is your simple editor class. It takes in a single options parameter. The given options are the following:
+// 
+// The editor class should return itself back.
+//
+// @param   cell        DOM         ie. div.doby-grid-cell.l1.r1.active.editable
+// @param   column      object      ie. { defaultSortAsc=true, focusable=true, groupable=true, more...}
+// @param   grid        object      ie. {NAME="doby-grid", VERSION="0.0.1", options={...}, more...}
+// @param   item        object      ie. {data={...}}
+//
+// @return object
+var editor = function (options) {
+
+    // initialize()
+    // The editor is actived when an active cell in the grid is focused.
+    // This should generate any DOM elements you want to use for your editor.
+    //
+    this.initialize = function () {
+        // Will hold the current value of the item being edited
+        this.loadValue(options.item);
+
+        var value = this.currentValue;
+        if (value === null || value === undefined) value = "";
+
+        this.$input = $('&lt;input type="text" class="doby-grid-editor" value="' + value + '"/&gt;')
+            .appendTo(options.cell)
+            .on("keydown", function (event) {
+                // Escape out of here on 'Tab', 'Enter', 'Home, 'End', 'Page Up' and 'Page Down'
+                // so that the grid can capture that event
+                if ([9, 13, 33, 34, 35, 36].indexOf(event.which) >= 0) {
+                    event.preventDefault();
+                    return;
+                }
+
+                // Esc
+                if (event.which == 27) return;
+            });
+    };
+
+
+    // applyValue()
+    // This is the function that will update the data model in the grid.
+    //
+    // @param   items       array       Array of row data to update
+    // @param   value       string      The user-input value being entered
+    //
+    this.applyValue = function (items, value) {
+        var item;
+        for (var i = 0, l = items.length; i < l; i++) {
+            item = items[i];
+
+            // Make sure we always have an id for our item
+            if (!('id' in item.item) && item.column.field == 'id') {
+                item.item.id = value;
+            }
+
+            // This might be a nested row with no data
+            if (item.item.data) {
+                item.item.data[item.column.field] = value;
+            }
+        }
+    };
+
+
+    // cancel()
+    // Cancel the edit and return the cell to its default state
+    //
+    this.cancel = function () {
+        this.destroy();
+        $(options.cell).html(this.currentValue);
+    };
+
+
+    // destroy()
+    // Destroys any elements your editor has created.
+    //
+    this.destroy = function () {
+        this.$input.remove();
+    };
+
+
+    // focus()
+    // When the cell with an initialized editor is focused
+    //
+    this.focus = function () {
+        this.$input.focus().select();
+    };
+
+
+    // getValue()
+    // Gets the current value of whatever the user has inputted
+    //
+    // @return string
+    this.getValue = function () {
+        return this.$input.val();
+    };
+
+
+    // isValueChanged()
+    // Determines whether or not the value has changed
+    //
+    // @return boolean
+    this.isValueChanged = function () {
+        return (!(this.$input.val() === "" && this.currentValue === null)) && (this.$input.val() != this.currentValue);
+    };
+
+
+    // loadValue()
+    // Loads the current value for the item
+    //
+    // @param   item    object      Data model object that is being edited
+    //
+    this.loadValue = function (item) {
+        this.currentValue = item.data[options.column.field] || "";
+    };
+
+
+    // serializeValue()
+    // Process the input value before submitting it
+    //
+    this.serializeValue = function () {
+        return this.$input.val();
+    };
+
+
+    // setValue()
+    // Sets the value inside your editor, in case some internal grid calls needs to do
+    // it dynamically.
+    //
+    // @param   val     string      Value to set
+    //
+    this.setValue = function (val) {
+        this.$input.val(val);
+    };
+
+    // showInvalid()
+    // What to do when the validation for an edit fails. Here you can highlight the cell
+    // and show the user the error message.
+    //
+    // @param   results     array       Results array from your validate() function
+    //
+    this.showInvalid = function (results) {
+        var result;
+        for (var i = 0, l = results.length; i < l; i++) {
+            result = results[i];
+
+            // Add Invalid Icon
+            result.$cell.append([
+                '<span class="', classinvalidicon, '" title="', result.msg, '"></span>'
+            ].join(''));
+
+            // Highlight Cell
+            result.$cell
+                .removeClass(classinvalid)
+                .width(); // Force layout
+            result.$cell.addClass(classinvalid);
+        }
+    };
+
+
+    // validate()
+    // Validation step for the value before allowing a save. Should return back either
+    // true or an array of objects like this:
+    //
+    // [{
+    //  row: 1,
+    //  cell: 1,
+    //  $cell: $(..),
+    //  msg: 'Your failure message here.'
+    // }, {
+    //  row: 1,
+    //  cell: 2,
+    //  $cell: $(..),
+    //  msg: 'Your failure message here.'
+    // }]
+    //
+    // @param   items       array       Array of edits to validate
+    // @param   callback    function    Callback function
+    //
+    this.validate = function (items, callback) {
+        var results = [];
+
+        // Sample code for validation failure
+        /*
+        for (var i = 0, l = items.length; i < l; i++) {
+            results.push({
+                row: items[i].row,
+                cell: items[i].cell,
+                $cell: items[i].$cell,
+                msg: "You cannot use " + this.getValue() + " as your value."
+            });
+        }
+        */
+
+        // No errors
+        if (results.length === 0) results = true;
+
+        // Your must return `true` here once validation passes (or if you want validation
+        // to be disabled), otherwise applyValue will never be called.
+        callback(results);
+    };
+
+    return this.initialize();
+};</code></pre>
+
+<h3>Caveats</h3>
+
+<p>When building your editor, you may run into the following issues. You'll need to keep this in mind.</p>
+
+<h4>Handling for Add Rows</a></h4>
+
+<p>If you plan to use the grid in combination with <a href="#grid-options-addRow"><code class="pill">options.addRow</code></a> you'll need to make sure your editor supports the ability to "create" new data, and not only edit existing values.</p>
+
+<p>This usually means making changes to <code class="pill">getValue()</code> and <code class="pill">applyValue()</code> functions.</p>
