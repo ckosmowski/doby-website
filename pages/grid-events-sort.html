@@ -1,0 +1,26 @@
+<h2><span class="pref">grid.events.</span>sort</h2>
+
+<p>Fired after the grid has finished processing a sorting request.</p>
+
+<h5>Parameters</h5>
+
+<blockquote>
+	<p><code class="pill strong">event</code> <code class="pill green">(object)</code> - Javascript event object</p>
+	<p><code class="pill strong">args</code> <code class="pill green">(object)</code> - This event's additional arguments.</p>
+</blockquote>
+
+<h5>Arguments</h5>
+
+<blockquote>
+	<p><code class="pill strong">sort</code> <code class="pill green">(object)</code> - The current sort options.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">new DobyGrid().on('sort', function(event, args) {
+    //console.log(event, args)
+})</code></pre>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>

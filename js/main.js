@@ -93,7 +93,7 @@ define([], function () {
 				} else {
 					$(document.body).removeClass('home');
 				}
-
+				
 				// Load page context
 				require([
 					'views/' + page
