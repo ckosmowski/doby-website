@@ -21,24 +21,24 @@
 
 	<ul class="columns">
 		<li>Extremely fast rendering speed</li>
-		<li>Adaptive virtual scrolling (handle millions of rows with extreme responsiveness)</li>
 		<li>Data driven and fully MVC oriented</li>
 		<li>Table header that sticks to the top when you scroll</li>
-		<li>Ability to edit and create new rows and columns on the fly just like a spreadsheet</li>
-		<li>Ability to resize/reorder/show/hide/auto-resize columns</li>
-		<li>Ability to sort by more than 1 column at a time (multi-sort)</li>
-		<li>Ability to group rows by a column value (including nested groups)</li>
-		<li>Ability to double-click on column separator to maximize the column based its contents</li>
-		<li>Ability to resize rows and insert rows of any height</li>
-		<li>Ability to click+drag to select cells</li>
-		<li>Ability to define multiple rows for a single data item</li>
-		<li>Ability to export CSV/JSON/HTML data</li>
-		<li>Support for column footers with data aggregators</li>
-		<li>Support for on-the-fly filtering of column data (and searching)</li>
-		<li>Support for clipboard copy operations</li>
-		<li>Support for Backbone.Collection objects as data sets (including remote data fetching)</li>
+		<li><a href="#grid-options-virtualScroll">Adaptive virtual scrolling (handle millions of rows with extreme responsiveness)</a></li>
+		<li><a href="#grid-method-add">Ability to edit and create new rows and columns on the fly just like a spreadsheet</a></li>
+		<li><a href="#grid-options-reorderable">Ability to resize/reorder/show/hide/auto-resize columns</a></li>
+		<li><a href="#grid-options-multiColumnSort">Ability to sort by more than 1 column at a time (multi-sort)</a></li>
+		<li><a href="#grid-options-groupable">Ability to group rows by a column value (including nested groups)</a></li>
+		<li><a href="#grid-options-columns-resizable">Ability to double-click on column separator to maximize the column based its contents</a></li>
+		<li><a href="#grid-options-resizableRows">Ability to resize rows and insert rows of any height</a></li>
+		<li><a href="#grid-options-selectable">Ability to click+drag to select cells</a></li>
+		<li><a href="#grid-options-data-rows">Ability to define multiple rows for a single data item</a></li>
+		<li><a href="#grid-method-export">Ability to export CSV/JSON/HTML data</a></li>
+		<li><a href="#grid-options-columns-aggregators">Support for column footers with data aggregators</a></li>
+		<li><a href="#grid-method-filter">Support for on-the-fly filtering of column data (and searching)</a></li>
+		<li><a href="#grid-options-clipboard">Support for clipboard copy operations</a></li>
+		<li><a href="#grid-options-data">Support for Backbone.Collection objects as data sets (including remote data fetching)</a></li>
+		<li><a href="#grid-options-keyboardNavigation">Full keyboard navigation</a></li>
 		<li>Easily integrates with i18n libraries</li>
-		<li>Full keyboard navigation</li>
 		<li>Pixel perfect, rock solid and stress tested with hundreds of <a href="https://github.com/globexdesigns/doby-grid/tree/master/tests">tests</a>
 		</li>
 	</ul>
@@ -73,9 +73,17 @@
 			</ul>
 		</li>
 	</ul>
+	
+	<h3>Browser Support</h3>
+
+	<ul>
+		<li>Firefox 24+</li>
+		<li>Chrome 27+</li>
+		<li>Safari 6.1+</li>
+	</ul>
 
 	<h3>Limitations</h3>
-
+	
 	<p>If your grid is rendered inside an invisible element, or an element that is resized - you will need to manually call the resize() method to correct the rendering. Window resizing is auto-detected however.</p>
 
 	<hr/>
@@ -96,15 +104,21 @@
 
 	<p>Change logs for our releases can be found here: <a href="https://github.com/globexdesigns/doby-grid/releases">https://github.com/globexdesigns/doby-grid/releases</a>.</p>
 
-	<h3>Submitting Bugs and Feature Requests</h3>
+	<h3>Submitting Bugs, Feature Requests and Questions</h3>
 
-	<p>Please use GitHub issues: <a href="https://github.com/globexdesigns/doby-grid/issues">https://github.com/globexdesigns/doby-grid/issues</a></p>
+	<p>If you find a bug, or want to request a new feature, or just need help getting going - please use our GitHub issues page at <a href="https://github.com/globexdesigns/doby-grid/issues">https://github.com/globexdesigns/doby-grid/issues</a></p>
+	
+	<hr/>
+
+	<h3>Contribute</h3>
+	
+	<p>Doby Grid is an Open Source community-driven project. We're always looking for help: both testing and development. If you'd like to get involved please let us know at <a href="mailto:info@globexdesigns.com">info@globexdesigns.com</a>!</p>
 
 	<hr/>
 
 	<h3>FAQ</h3>
 
-	<h4>Why is Backbone a required module? Can't I use Angular, Knockout, or another MVC?</h4>
+	<h4>Why is Backbone a required module? Can't I use Angular, Ember, Knockout, or another framework?</h4>
 
 	<p>The Backbone is used for in Doby Grid for two reasons:</p>
 
@@ -130,6 +144,8 @@
 	</ul>
 
 	<p>Doby Grid tries to find a balance between performance and usability while offering developers ways to control which features they want to enable at a potential performance cost.</p>
+	
+	<p>Also, the SlickGrid project is now <a href="https://github.com/mleibman/SlickGrid/commit/e004912b5ce29ac0d0cb04df50fe66db5e3af9ea">dead</a>.</p>
 
 	<h4>So it's like BackGrid then...</h4>
 
@@ -158,7 +174,13 @@
 	<p>If delegating events isn't enough, then you can use post-processing as demonstrated in the post-processing example. See the <a href="https://github.com/globexdesigns/doby-grid/wiki/Column-Options#wiki-grid-method-postprocess">postprocess</a> Column Option for documentation. Keep in mind that this is going to have a very significant rendering performance hit and is not recommended on large grids.</p>
 
 	<p>And just to be clear -- do not use this for trying to assign events to your cell. It won't work and will only make your grid slow. All those references will be wiped when the grid is re-rendered or scrolled. Don't bother.</p>
+	
+	<h4>Are you funded?</h4>
 
+	<p>Partially.</p>
+	
+	<p>The project is supported by two large organizations which have teams dedicated to driving the project forward. However, the funding is used only for fixing bugs and adding features that are needed for the requirements of the organizations. Anything outside the scrope of their work is community-driven.</p>
+	
 	<h4>There's a bug in Internet Explorer...</h4>
 
 	<p>Doby Grid does not support Internet Explorer. Don't bother posting bug reports. If it's something that affects all browsers - definitely let us know, but if it's an issue specific to IE6 or IE7 or IE8 or even IE9 -- sorry, Doby Grid is not for you.</p>
