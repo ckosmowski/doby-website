@@ -1,0 +1,32 @@
+<h2><span class="pref">grid.</span>fetcher</h2>
+
+<p>The remote data fetching object instance that is created when using a <a href="#grid-remote-data"><code class="pill">Remote Data</code></a> collection.</p>
+
+<p>The <code class="pill">grid.fetcher.request</code> object is especially useful if you want to manually control fetching after the grid makes requests (for example, to abort a long-running request).</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(object)</code>: Default <code class="pill">{}</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">var grid = new DobyGrid(...);
+
+// View the current fetcher
+console.log(grid.fetcher);</code></pre>
+
+<h5>Sample</h5>
+
+<pre><code class="language-javascript">{
+	count: function (options, callback) {},
+	fetch: function (options, callback) {}
+	fetchGroups: function (options, callback) {},
+	grid: DobyGrid
+	onLoaded: function () {},
+	onLoading: function () {},
+	
+	// Reference to the currently active AJAX request object
+	request: {}
+}</code></pre>

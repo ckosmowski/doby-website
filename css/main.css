@@ -357,10 +357,14 @@ code.strong {
 	font-weight: 600
 }
 
+a code.pill {
+	background: linear-gradient(to bottom, #fff5af, #f2db72);
+	border-color: #cca843;
+}
+
 	a:hover code.pill {
-		background: linear-gradient(to bottom, #E7E7E7, #DDD);
-		border: 1px solid #BBB;
-		color: #000;
+		background: linear-gradient(to bottom, #fffac8, #fae98d);
+		border: 1px solid #eac555;
 	}
 
 /* Prism JS tweaks */

@@ -1,7 +1,7 @@
 define([
 	'underscore',
 	'text!templates/grid-docs.html',
-	'text!pages/grid-method-selection.html',
+	'text!pages/grid-prop-selection.html',
 	'dobygrid'
 ], function (_, template, page, DobyGrid) {
 	"use strict";

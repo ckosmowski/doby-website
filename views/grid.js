@@ -18,7 +18,7 @@ define([
 		},
 		
 		render: function () {
-			new DobyGrid({
+			var g = new DobyGrid({
 				columns: [{
 					id: 'id',
 					field: 'id',
@@ -115,6 +115,8 @@ define([
 				editable: true,
 				quickFilter: true
 			}).appendTo('#demo-grid');
+			
+			console.log(g)
 		}
 	});
 });
