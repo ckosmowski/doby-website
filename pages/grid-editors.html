@@ -83,6 +83,10 @@ var editor = function (options) {
     // Destroys any elements your editor has created.
     //
     this.destroy = function () {
+		// Remember to reset any styling you've applied during validation here.
+		options.grid.$el.find('.' + classinvalid).removeClass(classinvalid);
+		options.grid.$el.find('.' + classinvalidicon).remove();
+	
         this.$input.remove();
     };
 
