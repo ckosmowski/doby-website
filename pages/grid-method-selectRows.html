@@ -1,0 +1,33 @@
+<h2><span class="pref">grid.</span>selectRows(<span class="param">fromRow</span>, <span class="param">toRow</span>, <span class="param">add</span>)</h2>
+<p>Programmatically select a range of rows on the grid. The <a href="#grid-options-selectable"><code class="pill">options.selectable</code></a> parameter must be enabled for this to work.</p>
+
+<h5>Available Since</h5>
+
+<p>Version 0.0.8</p>
+
+<h5>Parameters</h5>
+
+<blockquote>
+	<p><code class="pill strong">fromRow</code> <code class="pill green">(integer)</code> - Index of the row on which to start the selection.</p>
+	<p><code class="pill strong">endRow</code> <code class="pill green">(integer)</code> - Index of the row on which to end the selection.</p>
+	<p><code class="pill strong">add</code> <code class="pill green">(boolean)</code> - If true, will add selection as a new range, otherwise will replace existing selection ranges.</p>
+</blockquote>
+
+<h5>Returns</h5>
+
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">// Select the first row of cells
+new DobyGrid(...).selectCells(0, 0);
+
+// Select the first 5 rows
+new DobyGrid(...).selectCells(0, 4);
+
+// Select the first row, then add the second row to the selection
+new DobyGrid(...).selectCells(0, 0);
+new DobyGrid(...).selectCells(1, 1, true);
+</code></pre>
