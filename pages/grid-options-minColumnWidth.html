@@ -1,0 +1,36 @@
+<h2><span class="pref">options.</span>minColumnWidth</h2>
+
+<p>Restricts the minimum width the grid's column based on a given condition. Your available options are:</p>
+
+<blockquote>
+	<ul class="no-bullet">
+		<li><code class="pill">""</code> - No global restriction</li>
+		<li><code class="pill">"headerContent"</code> - The minimum width of the columns will be set to that width the content in the column's header (ie. the name of the column plus some additional spacing for the sorting indicator)</li>
+	</ul>
+</blockquote>
+
+<h5>Available Since</h5>
+
+<p>Version 0.0.8</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(string)</code>: Default <code class="pill">""</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{minColumnWidth: "headerContent"}</code></pre>
+
+<h5>Demo</h5>
+
+<label>
+	<strong>Set option value:</strong>
+	<select id="option-value">
+		<option value="" selected="selected">""</option>
+		<option value="headerContent">headerContent</option>
+	</select>
+</label>
+
+<div id="demo-grid"></div>
