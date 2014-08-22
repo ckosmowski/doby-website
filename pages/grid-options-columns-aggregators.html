@@ -25,7 +25,7 @@
 <h5>Type and Default</h5>
 
 <blockquote>
-	<p><code class="pill green">(array)</code>: Default <code class="pill">null</code>.</p>
+	<p><code class="pill green">(array)</code>: Default <code class="pill">undefined</code>.</p>
 </blockquote>
 
 <h5>Example</h5>
@@ -38,7 +38,7 @@
         fn: function (column) {
             // exporter()
             // This function will be called when the Aggregator cell value is being exported.
-            // 
+            //
             // @return string
             this.exporter = function () {
                 return (this.total || "");
