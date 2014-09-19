@@ -6,19 +6,19 @@ define([
 	'js/sample-data'
 ], function (_, template, page, DobyGrid, data) {
 	"use strict";
-	
+
 	return Backbone.DobyView.extend({
-		
+
 		initialize: function () {
 			var html = _.template(template, {
 				page: page
 			});
-			
+
 			this.$el.append(html);
 		},
-		
+
 		render: function () {
-			var g = new DobyGrid({
+			new DobyGrid({
 				columns: [{
 					id: 'id',
 					field: 'id',
@@ -115,8 +115,6 @@ define([
 				editable: true,
 				quickFilter: true
 			}).appendTo('#demo-grid');
-			
-			console.log(g)
 		}
 	});
 });

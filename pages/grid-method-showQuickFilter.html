@@ -1,0 +1,32 @@
+<h2><span class="pref">grid.</span>showQuickFilter(<span class="param">column_id</span>)</h2>
+<p>Allows you to programatically show and hide the Quick Filter bar below the column header.</p>
+
+<h5>Available Since</h5>
+
+<p>Version 0.0.8</p>
+
+<h5>Parameters</h5>
+
+<blockquote>
+	<p><code class="pill strong">column_id</code> <code class="pill green">(string)</code> - ID of the column to focus after the Quick Filter is shown. If null, will hide the QUick Filter instead.</p>
+</blockquote>
+
+<h5>Returns</h5>
+
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">
+// Show the Quick Filter and focus the 'id' column input
+new DobyGrid(...).showQuickFilter('id');
+
+// Hide the Quick Filter
+new DobyGrid(...).showQuickFilter();
+</code></pre>
+
+<h5>Demo</h5>
+
+<div id="demo-grid"></div>
