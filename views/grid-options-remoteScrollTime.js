@@ -24,7 +24,7 @@ define([
 		},
 		
 		render: function () {
-			new DobyGrid({
+			this.grid = new DobyGrid({
 				columns: [{
 					id: "id",
 					name: "ID",
