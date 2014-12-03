@@ -1,0 +1,29 @@
+<h2><span class="pref">options.</span>forceRemoteSort</h2>
+
+<p>By default, when using a <a href="#grid-remote-data">Remote Data</a>, DobyGrid will switch to local (client-side) sorting once the full data set has been fetched. In some cases this is undesireable as you may want to have your server perform all sorting operations. This option allows you to force DobyGrid to always refetch data when performing a sort.</p>
+
+<h5>Available Since</h5>
+
+<p>Version 0.1.0</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(boolean)</code>: Default <code class="pill">false</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{forceRemoteSort: true}</code></pre>
+
+<h5>Demo</h5>
+
+<label>
+	<strong>Set option value:</strong>
+	<select id="option-value">
+		<option value="true">true</option>
+		<option value="false" selected="selected">false</option>
+	</select>
+</label>
+
+<div id="demo-grid"></div>

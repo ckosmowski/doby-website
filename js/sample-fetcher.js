@@ -1,4 +1,4 @@
-/*global $, _, define*/
+/* global _, define */
 
 define([
 	'backbone',
@@ -10,7 +10,7 @@ define([
 	
 	// Use a Backbone data set?
 	var backboneset = true;
-
+	
 	// Replicates a server's database filter
 	var remote_filter = function (options, item) {
 		var result = true;
@@ -60,6 +60,9 @@ define([
 	var timer;
 
 	var count = function (options, callback) {
+		// Allows certain examples to limit the data set
+		if (window.sampleFetcherLimit != null) dataset = dataset.slice(0, window.sampleFetcherLimit);
+		
 		// Fake AJAX delay
 		if (timer) clearTimeout(timer);
 		timer = setTimeout(function () {
@@ -70,6 +73,9 @@ define([
 	};
 
 	var fetch = function (options, callback) {
+		
+		// Allows certain examples to limit the data set
+		if (window.sampleFetcherLimit != null) dataset = dataset.slice(0, window.sampleFetcherLimit);
 
 		// Fake AJAX delay
 		if (timer) clearTimeout(timer);
@@ -132,6 +138,9 @@ define([
 	};
 
 	var fetchGroups = function (options, callback) {
+		// Allows certain examples to limit the data set
+		if (window.sampleFetcherLimit != null) dataset = dataset.slice(0, window.sampleFetcherLimit);
+		
 		return setTimeout(function () {
 			var results = [], column_id;
 			var generateGroup = function (column_id, data, level, parent_group_value) {
