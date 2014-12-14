@@ -1,0 +1,32 @@
+<h2><span class="pref">grid.</span>resizeColumnsToContent(<span class="param">useMaxWidth</span>, <span class="param">once</span>, <span class="param">silent</span>)</h2>
+<p>When resizeColumnsToContent is called, the grid will scan the currently rendered DOM elements to determine the maximum and minimum widths of the content of each cell and then resize the columns of the grid to ensure that all content fits.</p>
+
+<p><strong>WARNING:</strong> This is a very slow operation, especially on large grids and should not be called frequently as it will block rendering.</p>
+
+<h5>Available Since</h5>
+
+<p>Version 0.1.0</p>
+
+<h5>Parameters</h5>
+
+<blockquote>
+	<p><code class="pill strong">useMaxWidth</code> <code class="pill green">(boolean)</code> - Take the maximum width of the columns into account</p>
+	<p><code class="pill strong">once</code> <code class="pill green">(boolean)</code> - Submit the column resize only once for all columns</p>
+	<p><code class="pill strong">silent</code> <code class="pill green">(boolean)</code> - Don't trigger resize events</p>
+</blockquote>
+
+<h5>Returns</h5>
+
+<blockquote>
+	<p><code class="pill strong">(object)</code> - A Doby Grid class instance</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">new DobyGrid(...).resizeColumnsToContent();</code></pre>
+
+<h5>Demo</h5>
+
+<button id="resizeColumnsToContent" class="button tiny">Resize Columns to Content</button>
+
+<div id="demo-grid" style="padding:0"></div>

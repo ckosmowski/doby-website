@@ -1,18 +1,18 @@
 define([], function () {
 	"use strict";
-	
+
 	require.config({
 		baseUrl: '',
 		paths: {
 			backbone: '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min',
 			dobygrid: 'modules/grid/doby-grid.min',
-			jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min',
+			jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min',
 			jqueryeventdrag: 'js/libs/jquery.event.drag',
 			jqueryui: '//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min',
 			filesaver: 'js/libs/FileSaver',
 			prism: 'js/libs/prism',
 			text: '//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.10/text',
-			underscore: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min'
+			underscore: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min'
 		},
 		shim: {
 			backbone: {
@@ -26,7 +26,7 @@ define([], function () {
 				deps: ['jquery']
 			},
 			jqueryui: {
-				deps: ['jquery']	
+				deps: ['jquery']
 			},
 			prism: {
 				exports: 'Prism'
@@ -36,32 +36,32 @@ define([], function () {
 			}
 		}
 	});
-	
+
 	require(['underscore', 'backbone', 'prism'], function (_, Backbone, Prism) {
-		
+
 		// Custom Backbone View for all pages
 		Backbone.DobyView = Backbone.View.extend({
 			events: {
 				"keyup #doc-search":		"docSearch"
 			},
-			
+
 			className: 'page',
-			
+
 			/**
 			 * Filters the documentation sidebar when users type into the "Search Docs" input
 			 * @method docSearch
 			 * @memberof DobyView
-			 * 
+			 *
 			 * @param	{object}	event		- Javascript event object
-			 * 
+			 *
 			 */
 			docSearch: function (event) {
 				var value = $(event.currentTarget).val();
-				
+
 				this.$el.find('.sidebar .side-nav li').each(function () {
 					// Re-enable everything first
 					$(this).show();
-					
+
 					// Hide items which are filtered out
 					if (value.length > 0 && $(this).text().toLowerCase().indexOf(value.toLowerCase()) < 0) {
 						$(this).hide();
@@ -69,13 +69,13 @@ define([], function () {
 				});
 			}
 		});
-		
+
 		// Change to handlebars to allow <% %> to render Python
 		_.templateSettings = {
 			interpolate: /\{\{(.+?)\}\}/gim,
 			evaluate: /<@([\s\S]+?)@>/g
 		};
-		
+
 		// Page Router
 		var Router = Backbone.Router.extend({
 			routes: {
@@ -84,29 +84,29 @@ define([], function () {
 
 			load: function (page) {
 				page = page || 'home';
-				
+
 				// Scroll to top
 				document.body.scrollTop = 0;
-				
+
 				if (page == 'home') {
 					$(document.body).addClass('home');
 				} else {
 					$(document.body).removeClass('home');
 				}
-				
+
 				// Load page context
 				require([
 					'views/' + page
 				], function (PageView) {
-					
+
 					$(document.body).addClass('loaded');
-					
+
 					var showPage = function (immediate) {
 						// Load view
 						var view = new PageView({
 							id: 'page-' + page
 						});
-						
+
 						// Insert into DOM
 						view.$el.appendTo('#content');
 
@@ -114,7 +114,7 @@ define([], function () {
 							// If this is the first page loaded - show it immediately, don't fade in
 							view.$el.show();
 							if (view.render) view.render();
-							
+
 							// Highlight syntax
 							Prism.highlightAll();
 						} else {
@@ -137,7 +137,7 @@ define([], function () {
 							});
 						});
 					} else {
-						showPage(true);	
+						showPage(true);
 					}
 
 					// Scroll to top
