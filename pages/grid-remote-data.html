@@ -10,19 +10,21 @@
 
 <pre><code class="language-javascript" style="max-height:none">data: function () {
 
-    // count()
-    // Via callback, should return an integer that represents the total number of data objects available on your server. This tells the grid how many rows of data to expect.
-    //
-    // Should return back a pointer to your jQuery AJAX object.
-    //
-    // @param   options     object      Fetch options
-    // @param   callback    function    Callback function
-    //
-    // The following options will be passed in:
-    //
-    // @opt     filters     array       Filter set currently applied to data
-    //
-    // @return object
+    /**
+	 * count()
+     * Via callback, should return an integer that represents the total number of data objects available on your server. This tells the grid how many rows of data to expect.
+     *
+     * Should return back a pointer to your jQuery AJAX object.
+     *
+     * @param   {object}      options     - Fetch options
+     * @param   {function}    callback    - Callback function
+     *
+     * The following options will be passed in:
+     *
+     * @param   {array}       options.filters     - Filter set currently applied to data
+     *
+     * @returns {object}
+	 */
     this.count = function (options, callback) {
         return $.ajax({
             url: "your_server_here/count_function",
@@ -32,23 +34,26 @@
         });
     };
 
-    // fetch()
-    // Via callback, should return an array of data objects for the given options set.
-    //
-    // Should return back a pointer to your jQuery AJAX object.
-    //
-    // @param   options     object      Fetch options
-    // @param   callback    function    Callback function
-    //
-    // The following options will be passed in:
-    //
-    // @opt     columns     array       List of currently active column objects
-    // @opt     filters     array       Filter set currently applied to data
-    // @opt     limit       integer     The number of items needed
-    // @opt     offset      integer     On which row to start fetching
-    // @opt     order       array       A list of the current sort order objects
-    //
-    // @return object
+
+	/*
+     * fetch()
+     * Via callback, should return an array of data objects for the given options set.
+     *
+     * Should return back a pointer to your jQuery AJAX object.
+     *
+     * @param   {object}      options     	- Fetch options
+     * @param   {function}    callback    	- Callback function
+     *
+     * The following options will be passed in:
+     *
+     * @param   {array}       options.columns     - List of currently active column objects
+     * @param   {array}       options.filters     - Filter set currently applied to data
+     * @param   {integer}     options.limit       - The number of items needed
+     * @param   {integer}     options.offset      - On which row to start fetching
+     * @param   {array}       options.order       - A list of the current sort order objects
+     *
+     * @returns {object}
+	 */
     this.fetch = function (options, callback) {
         return $.ajax({
             data: options,
@@ -59,50 +64,53 @@
         });
     };
 
-    // fetchGroups()
-    // Via callback, should return the values for a given group request.
-    // Expecting results in the following format:
-    //
-    // [{
-    //      column_id: 'first_grouped_column',
-    //      groups: [{
-    //          count: 432,
-    //          value: 'A'
-    //      }, {
-    //          count: 192,
-    //          value: 'B'
-    //      }]
-    // }, {
-    //      column_id: 'second_grouped_column',
-    //      groups: [{
-    //          count: 12,
-    //          value: '1',
-    //          parent: 'A'
-    //      }, {
-    //          count: 14,
-    //          value: '2',
-    //          parent: 'A'
-    //      }]
-    // }]
-    //
-    // Where the 'column_id' value is the ID of the column which is being grouped by, the 'count' is the
-    // total number of items in that group, and the 'value' is the user-facing value of this group.
-    //
-    // It's also important to note that 'null' value groups are expected to be at the end of the groups
-    // array. Otherwise, the grid will not render the rows correctly.
-    //
-    // Should return back a pointer to your jQuery AJAX object.
-    //
-    // @param   options     object      Grouping options
-    // @param   callback    function    Callback function
-    //
-    // The following options will be passed in:
-    //
-    // @opt     filters     array       Filter set currently applied to data
-    // @opt     groups      array       A list of grouping objects currently enabled
-    // @opt     order       array       A list of the current sort order objects
-    //
-    // @return object
+
+	/*
+     * fetchGroups()
+     * Via callback, should return the values for a given group request.
+     * Expecting results in the following format:
+     *
+     * [{
+     *      column_id: 'first_grouped_column',
+     *      groups: [{
+     *          count: 432,
+     *          value: 'A'
+     *      }, {
+     *          count: 192,
+     *          value: 'B'
+     *      }]
+     * }, {
+     *      column_id: 'second_grouped_column',
+     *      groups: [{
+     *          count: 12,
+     *          value: '1',
+     *          parent: 'A'
+     *      }, {
+     *          count: 14,
+     *          value: '2',
+     *          parent: 'A'
+     *      }]
+     * }]
+     *
+     * Where the 'column_id' value is the ID of the column which is being grouped by, the 'count' is the
+     * total number of items in that group, and the 'value' is the user-facing value of this group.
+     *
+     * It's also important to note that 'null' value groups are expected to be at the end of the groups
+     * array. Otherwise, the grid will not render the rows correctly.
+     *
+     * Should return back a pointer to your jQuery AJAX object.
+     *
+     * @param   {object}    options     - Grouping options
+     * @param   {function}  callback    - Callback function
+     *
+     * The following options will be passed in:
+     *
+     * @param   {array}		options.filters     - Filter set currently applied to data
+     * @param   {array}		options.groups      - A list of grouping objects currently enabled
+     * @param   {array}		options.order       - A list of the current sort order objects
+     *
+     * @returns {object}
+	 */
     this.fetchGroups = function (options, callback) {
         return $.ajax({
             data: options,
@@ -113,21 +121,31 @@
         });
     };
 
-    // onLoading()
-    // This function will be called when the grid begins processing a request. This is your chance
-    // to draw a progress bar or loading spinner.
-    //
+
+	/*
+     * onLoading(loadingVisibleRows )
+     * This function will be called when the grid begins processing a request. This is your chance
+     * to draw a progress bar or loading spinner.
+	 *
+	 * @param	{boolean}	loadingVisibleRows		- Will be true if any rows being loaded are currently visible
+     */
     this.onLoading = function () {
+	    if (!this.grid.$el || !loadingVisibleRows) return;
         var loader = $('&lt;div class="myloader" style="background:rgba(0,0,0,0.2);position:absolute;top:30px;left:0;right:0;bottom:0;text-align:center;line-height:300px"&gt;Loading...&lt;/div&gt;')
             .hide()
             .appendTo(this.grid.$el)
             .fadeIn(150);
     };
 
-    // onLoaded()
-    // This function will be called when the grid stops processing a request.
-    //
-    this.onLoaded = function () {
+
+	/*
+     * onLoaded()
+     * This function will be called when the grid stops processing a request.
+	 *
+	 * @param	{boolean}	loadingVisibleRows		- Will be true if any rows being loaded are currently visible
+	 */
+    this.onLoaded = function (loadingVisibleRows) {
+	    if (!this.grid.$el || !loadingVisibleRows) return;
         this.grid.$el.children('.myloader')
             .fadeOut(150, function () {
                 $(this).remove();

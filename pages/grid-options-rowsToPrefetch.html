@@ -1,0 +1,36 @@
+<h2><span class="pref">options.</span>rowsToPrefetch</h2>
+
+<p>This options makes it possible for the user to scroll through remotely fetched results without seeing blank cells that are waiting to load. It accomplishes this by fetching extra rows, the amount of which is configurable by the developer. <a href="#grid-remote-data">Remote Data</a> must be enabled for this to come into effect.</p>
+
+<p>By default, no extra results are fetched and the behaviour remains the same as before. Set the <code class="pill">rowsToPrefetch</code> option to a value greater than 0 to turn on prefetching. A common prefetch amount is 20 rows, which feels good for fast server response times. Scrolling at a reasonably slow, steady pace doesn't show the loading spinner while a faster one does.</p>
+
+<p>Additionally, DobyGrid passes an extra argument to the fetcher's <code class="pill">onLoading</code> callback to indicate if any rows being loaded are currently visible. If they are, you probably want to display a loading indicator. If they aren't (i.e. in the best case scenario when you're "beating" the user and successfully fetching results before they scroll to them), the user need not know that requests are being made in the background on their behalf.</p>
+
+<p>The appropriate number of rows to prefetch will depend on the speed of the AJAX request. If a remote fetch has a lot of overhead, grabbing extra results while you're making the request might be desirable. On the other hand, each individual fetch might be slower due to returning extra rows. This is especially true on the first load — if you set it to prefetch 300 rows but only 20 are initially visible, that's a lot of extra data to wait for at the start. However, the user can then scroll freely for a while before reaching rows that have yet to be fetched. It's a balancing act.</p>
+
+<h5>Available Since</h5>
+
+<p>Version 0.1.1</p>
+
+<h5>Type and Default</h5>
+
+<blockquote>
+	<p><code class="pill green">(integer)</code>: Default <code class="pill">0</code>.</p>
+</blockquote>
+
+<h5>Example</h5>
+
+<pre><code class="language-javascript">{rowsToPrefetch: 20}</code></pre>
+
+<h5>Demo</h5>
+
+<label>
+	<strong>Set option value:</strong>
+	<select id="option-value">
+		<option value="0" selected="selected">0</option>
+		<option value="20">20</option>
+		<option value="100">100</option>
+	</select>
+</label>
+
+<div id="demo-grid"></div>
