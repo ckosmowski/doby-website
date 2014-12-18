@@ -14,6 +14,7 @@
 		</ul>
 	</blockquote>
 	<p><code class="pill strong">callback</code> <code class="pill green">(function)</code> - A callback function which will return the exported data.</p>
+	<p><code class="pill strong">groupRow</code> <code class="pill green">(object)</code> - (Optional) Row index of the group to export.</p>
 </blockquote>
 
 <h5>Returns</h5>
@@ -32,7 +33,12 @@ new DobyGrid(...).export('csv', function (result) {
 // Export the grid to an HTML string
 new DobyGrid(...).export('html', function (result) {
 	// Process the 'result' here
-});</code></pre>
+});
+
+// Export just the group at row 0
+new DobyGrid(...).export('html', function (result) {
+	// Process the 'result' here
+}, 0);</code></pre>
 
 <h5>Demo</h5>
 
