@@ -1,4 +1,4 @@
 doby-website
 ============
 
-Official website for doby.js (http://www.dobyjs.com/)
+Official website for doby.js
